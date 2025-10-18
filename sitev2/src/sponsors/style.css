@@ -1,0 +1,130 @@
+/* Base container - matching Card component style */
+.data-sources-section {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto 40px;
+  border-radius: 12px;
+  border: 1px solid hsl(var(--border));
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.data-sources-section:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Header row containing logos + icon - matching CardHeader */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 12px;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+/* Logos row */
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex: 1;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.logo.active,
+.logo:hover {
+  opacity: 1;
+}
+
+/* Toggle icon */
+.toggle-icon {
+  cursor: pointer;
+  color: hsl(var(--primary));
+  margin-left: 20px;
+  transition: color 0.2s ease;
+}
+
+.toggle-icon:hover {
+  color: hsl(var(--primary) / 0.8);
+}
+
+/* Details slide‐in panel - matching CardContent */
+.details-slide {
+  padding: 24px;
+}
+
+.details-slide h4 {
+  margin-bottom: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.details-slide p {
+  margin-bottom: 16px;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.5;
+}
+
+.details-slide ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-slide li {
+  margin-bottom: 8px;
+}
+
+.details-slide a {
+  color: #158FAB;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.details-slide a:hover {
+  text-decoration: underline;
+  color: #136E95;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .logo-row {
+    gap: 20px;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .toggle-icon {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .toggle-icon {
+    margin-top: 10px;
+  }
+  .logo-row {
+    margin-bottom: 10px;
+  }
+}

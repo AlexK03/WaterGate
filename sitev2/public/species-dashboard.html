@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Gate - Species Data Dashboard</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(30, 64, 175, 0.6) 50%, rgba(59, 130, 246, 0.4) 100%);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Species Dashboard Styles */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        .dashboard-container h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .dashboard-container p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .selector-button {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #e5e7eb;
+            background: white;
+            color: #374151;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .selector-button:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+        
+        .selector-button.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        
+        .species-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .species-card h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+        
+        .species-card p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .species-image {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            flex-shrink: 0;
+            background-color: #f8f9fa;
+            padding: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .species-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Modal overlay for zoomed image */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .modal-close:hover {
+            color: #ccc;
+        }
+        
+        .species-info {
+            flex: 1;
+        }
+        
+        .graph-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .graph-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .graph-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .graph-item p {
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-align: center;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 1rem;
+            }
+            
+            .dashboard-container h1 {
+                font-size: 2rem;
+            }
+            
+            .graph-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .selector {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <video class="hero-video" autoplay muted loop>
+            <source src="/background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content min-h-screen w-full flex items-center justify-center overflow-hidden">
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6 leading-tight">
+                    Water Gate
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Species Data Dashboard
+                </p>
+                <p class="text-lg text-white/80 max-w-2xl mx-auto">
+                    Explore marine species data and biodiversity patterns
+                </p>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4">
+            <button
+                onclick="window.location.href='/'"
+                class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
+                aria-label="Back to main page"
+            >
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span class="font-medium">Back to Home</span>
+            </button>
+            
+            <button
+                onclick="window.location.href='/map-page.html'"
+                class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
+                aria-label="Navigate to map page"
+            >
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <span class="font-medium">View Map</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Species Dashboard Section -->
+    <div class="relative bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+                    Species Data Dashboard
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Explore marine species data and biodiversity patterns
+                </p>
+            </div>
+            
+            <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="absolute top-4 right-4 z-10">
+                    <button
+                        onclick="window.location.href='/'"
+                        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                    >
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        Back to Home
+                    </button>
+                </div>
+                
+                <!-- Species Dashboard Content -->
+                <div class="dashboard-container">
+                    <h1>Seasonal Monitoring Dashboard</h1>
+                    <p>
+                        This page provides seasonal DNA abundance data for different species
+                        identified in environmental samples. Select between <strong>vertebrates</strong> or <strong>phytoplanktons</strong>,
+                        then explore individual species. <br /><br />
+                        For each species, we show two bar graphs representing sampling results from two different geographic locations:
+                        <strong> Southwest UK</strong> and <strong> Tromsø, Norway</strong>.
+                      </p>
+                      
+
+                    <!-- Category Selector -->
+                    <div class="selector">
+                        <button class="selector-button active" onclick="showCategory('vertebrates')">
+                            Vertebrates
+                        </button>
+                        <button class="selector-button" onclick="showCategory('phytoplanktons')">
+                            Phytoplanktons
+                        </button>
+                    </div>
+
+                    <!-- Species Selector -->
+                    <div class="selector" id="species-selector">
+                        <button class="selector-button active" onclick="showSpecies('clupea-harengus')" data-species-id="clupea-harengus">
+                            Clupea harengus
+                        </button>
+                        <button class="selector-button" onclick="showSpecies('oncorhynchus-gorbuscha')" data-species-id="oncorhynchus-gorbuscha">
+                            Oncorhynchus gorbuscha
+                        </button>
+                        <button class="selector-button" onclick="showSpecies('prionace-glauca')" data-species-id="prionace-glauca">
+                            Prionace glauca
+                        </button>
+                    </div>
+
+                    <!-- Species Description -->
+                    <div class="species-card">
+                        <img src="/src/data/graphs/Clupea%20harengus.jpeg" alt="Atlantic herring" class="species-image" onclick="openModal('/src/data/graphs/Clupea%20harengus.jpeg', 'Atlantic herring')" />
+                        <div class="species-info">
+                            <h2>
+                                <em>Clupea harengus</em> (Atlantic herring)
+                            </h2>
+                            <p>A species of herring found in the North Atlantic Ocean, important in commercial fisheries.</p>
+                        </div>
+                    </div>
+
+                    <!-- Graphs -->
+                    <div class="graph-grid">
+                        <div class="graph-item">
+                            <img src="/src/data/graphs/AtlanticHerringUK.png" alt="Graph 1" />
+                            <p>Southwest UK</p>
+                        </div>
+                        <div class="graph-item">
+                            <img src="/src/data/graphs/AtlanticHerringTromso.png" alt="Graph 2" />
+                            <p>Tromsø, Norway</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="Species Image" />
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Species data
+        const speciesData = {
+            vertebrates: {
+                title: 'Vertebrates',
+                species: [
+                    {
+                        id: 'clupea-harengus',
+                        name: 'Clupea harengus',
+                        commonName: 'Atlantic herring',
+                        description: 'A species of herring found in the North Atlantic Ocean, important in commercial fisheries.',
+                        image: '/src/data/graphs/Clupea%20harengus.jpeg',
+                        graphs: [
+                            {
+                                image: '/src/data/graphs/AtlanticHerringUK.png',
+                                caption: 'Southwest UK',
+                            },
+                            {
+                                image: '/src/data/graphs/AtlanticHerringTromso.png',
+                                caption: 'Tromsø, Norway',
+                            },
+                        ],
+                    },
+                    {
+                        id: 'oncorhynchus-gorbuscha',
+                        name: 'Oncorhynchus gorbuscha',
+                        commonName: 'Pink salmon',
+                        description: 'A species of salmon native to the Pacific Ocean, known for its distinctive pink coloration and migratory behavior.',
+                        image: '/src/data/graphs/Oncorhynchus%20gorbuscha.jpg',
+                        graphs: [
+                            {
+                                image: '/src/data/graphs/PinkSalmonUK.png',
+                                caption: 'Southwest UK',
+                            },
+                            {
+                                image: '/src/data/graphs/PinkSalmonTromso.png',
+                                caption: 'Tromsø, Norway',
+                            },
+                        ],
+                    },
+                    {
+                        id: 'prionace-glauca',
+                        name: 'Prionace glauca',
+                        commonName: 'Blue shark',
+                        description: 'A large pelagic shark species found in temperate and tropical waters worldwide, known for its distinctive blue coloration.',
+                        image: '/src/data/graphs/Prionance Glauca.jpg',
+                        graphs: [
+                            {
+                                image: '/src/data/graphs/BlueSharkUK.png',
+                                caption: 'Southwest UK',
+                            },
+                            {
+                                image: '/src/data/graphs/BlueSharkTromso.png',
+                                caption: 'Tromsø, Norway',
+                            },
+                        ],
+                    },
+                ],
+            },
+            phytoplanktons: {
+                title: 'Phytoplanktons',
+                species: [
+                    {
+                        id: 'micromonas-pusilla',
+                        name: 'Micromonas pusilla',
+                        commonName: 'Green tide algae',
+                        description: 'A small, unicellular green alga belonging to the prasinophytes, commonly found in marine environments and known for its role in primary production and carbon cycling.',
+                        image: '/src/data/graphs/Micromonas%20pusilla.jpg',
+                        graphs: [
+                            {
+                                image: '/src/data/graphs/MicromonasPusillaUK.png',
+                                caption: 'Southwest UK',
+                            },
+                            {
+                                image: '/src/data/graphs/Micromonas pusillaTromso.png',
+                                caption: 'Tromsø, Norway',
+                            },
+                        ],
+                    },
+                ],
+            },
+        };
+        
+        let currentCategory = 'vertebrates';
+        let currentSpeciesId = 'clupea-harengus';
+        
+        function showCategory(category) {
+            currentCategory = category;
+            
+            // Update category buttons
+            document.querySelectorAll('.selector-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update species selector
+            updateSpeciesSelector();
+            
+            // Show first species
+            const firstSpecies = speciesData[category].species[0];
+            currentSpeciesId = firstSpecies.id;
+            showSpecies(firstSpecies.id);
+        }
+        
+        function updateSpeciesSelector() {
+            const speciesSelector = document.getElementById('species-selector');
+            const species = speciesData[currentCategory].species;
+            
+            speciesSelector.innerHTML = species.map(s => 
+                `<button class="selector-button" onclick="showSpecies('${s.id}')" data-species-id="${s.id}">
+                    ${s.name}
+                </button>`
+            ).join('');
+        }
+        
+        function showSpecies(speciesId) {
+            currentSpeciesId = speciesId;
+            
+            // Update species buttons
+            document.querySelectorAll('#species-selector .selector-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-species-id') === speciesId) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update species card and graphs
+            const species = speciesData[currentCategory].species.find(s => s.id === speciesId);
+            if (species) {
+                document.querySelector('.species-card').innerHTML = 
+                    `<img src="${species.image}" alt="${species.commonName}" class="species-image" onclick="openModal('${species.image}', '${species.commonName}')" />
+                     <div class="species-info">
+                         <h2><em>${species.name}</em> (${species.commonName})</h2>
+                         <p>${species.description}</p>
+                     </div>`;
+                
+                const graphGrid = document.querySelector('.graph-grid');
+                graphGrid.innerHTML = species.graphs.map(graph => 
+                    `<div class="graph-item">
+                        <img src="${graph.image}" alt="Graph" />
+                        <p>${graph.caption}</p>
+                    </div>`
+                ).join('');
+            }
+        }
+        
+        // Modal functions
+        function openModal(imageSrc, imageAlt) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modalImage.alt = imageAlt;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

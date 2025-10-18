@@ -17,7 +17,8 @@ import {
   SelectValue,
 } from "./components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
-import backgroundVideo from "./assets/background.mp4";
+import backgroundVideo from "./assets/background.webm";
+import DataSourcesSection from "./sponsors/DataSourcesSection";
 
 export default function App() {
   const [selectedRegion, setSelectedRegion] = useState("UK");
@@ -43,7 +44,7 @@ export default function App() {
   // Get fishing data based on selected region, year, month, and vessel ID
   const getFishingData = (region: string, year: string, month: string = "All Months", vesselId: string = "All Vessels") => {
     let data;
-    
+
     // Select data based on region and year
     if (region === "UK") {
       switch (year) {
@@ -62,7 +63,7 @@ export default function App() {
     } else {
       data = fishingDataUK2023; // Default to UK
     }
-    
+
     // Filter by month if not "All Months"
     if (month !== "All Months") {
       const monthNumber = month.padStart(2, '0'); // Convert "1" to "01", etc.
@@ -72,14 +73,14 @@ export default function App() {
         return pointMonth === monthNumber;
       });
     }
-    
+
     // Filter by vessel ID if not "All Vessels"
     if (vesselId !== "All Vessels") {
       data = data.filter(point => {
         return point['Vessel IDs'].toString() === vesselId;
       });
     }
-    
+
     return data;
   };
 
@@ -120,17 +121,17 @@ export default function App() {
 
   const navigateStation = (direction: 'prev' | 'next') => {
     if (!selectedStation) return;
-    
+
     const currentIndex = samplingLocations.findIndex(loc => loc.name === selectedStation);
     if (currentIndex === -1) return;
-    
+
     let newIndex;
     if (direction === 'prev') {
       newIndex = currentIndex === 0 ? samplingLocations.length - 1 : currentIndex - 1;
     } else {
       newIndex = currentIndex === samplingLocations.length - 1 ? 0 : currentIndex + 1;
     }
-    
+
     setSelectedStation(samplingLocations[newIndex].name);
   };
 
@@ -152,7 +153,7 @@ export default function App() {
     if (selectedStation && stationMapRef.current && !stationMapInstanceRef.current) {
       // Get coordinates from the actual data
       const currentData = getFishingData(selectedRegion, selectedYear, selectedMonth, selectedVesselId);
-      const locationData = currentData.find(point => 
+      const locationData = currentData.find(point =>
         `Fishing Zone ${point.Lat.toFixed(1)}°N, ${point.Lon.toFixed(1)}°` === selectedStation
       );
 
@@ -161,18 +162,18 @@ export default function App() {
         import('leaflet').then((L) => {
           // Create small map centered on station
           const stationMap = L.default.map(stationMapRef.current!).setView(coords, 8);
-          
+
           // Add tile layer
           L.default.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
           }).addTo(stationMap);
-          
+
           // Add ocean basemap
           L.default.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}', {
             attribution: '© Esri',
             opacity: 0.7
           }).addTo(stationMap);
-          
+
           // Add station marker
           L.default.circleMarker(coords, {
             radius: 10,
@@ -189,12 +190,12 @@ export default function App() {
               <p style="margin: 0; font-size: 12px;">Vessel ID: ${locationData['Vessel IDs']}</p>
             </div>
           `);
-          
+
           stationMapInstanceRef.current = stationMap;
         });
       }
     }
-    
+
     // Cleanup station map when station changes
     return () => {
       if (stationMapInstanceRef.current) {
@@ -213,27 +214,27 @@ export default function App() {
         const mapCenter: [number, number] = selectedRegion === "Tromso" ? [69.6, 18.9] : [50.5, -4.0]; // Tromso or UK
         const mapZoom = selectedRegion === "Tromso" ? 5 : 6; // Different zoom levels for each region
         const map = L.default.map(mapRef.current!).setView(mapCenter, mapZoom);
-        
+
         // Add tile layers
         L.default.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '© OpenStreetMap contributors'
         }).addTo(map);
-        
+
         // Add ocean basemap
         L.default.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}', {
           attribution: '© Esri',
           opacity: 0.7
         }).addTo(map);
-        
+
         // Get fishing effort data for the selected year and month
         const currentFishingData = getFishingData(selectedRegion, selectedYear, selectedMonth, selectedVesselId);
-        
+
         // Process fishing data for map markers
         const fishingMarkers = currentFishingData.map((point) => {
           const fishingHours = point['Apparent Fishing Hours'];
           const vesselCount = point['Vessel IDs'];
           const timeRange = point['Time Range'];
-          
+
           // Determine marker color based on fishing intensity
           let status = 'low';
           let color = '#00cc66'; // green for low
@@ -244,7 +245,7 @@ export default function App() {
             status = 'medium';
             color = '#ffcc00'; // yellow for medium
           }
-          
+
           return {
             lat: point.Lat,
             lng: point.Lon,
@@ -256,7 +257,7 @@ export default function App() {
             color: color
           };
         });
-        
+
         // Add markers for fishing effort data
         fishingMarkers.forEach(point => {
           const marker = L.default.circleMarker([point.lat, point.lng], {
@@ -278,7 +279,7 @@ export default function App() {
               </button>
             </div>
           `);
-          
+
           // Add click handler to marker
           marker.on('click', () => {
             setSelectedStation(point.name);
@@ -288,11 +289,11 @@ export default function App() {
             }, 500);
           });
         });
-        
+
         mapInstanceRef.current = map;
       });
     }
-    
+
     // Cleanup map when component unmounts or map is hidden
     return () => {
       if (!showMap && mapInstanceRef.current) {
@@ -320,56 +321,75 @@ export default function App() {
             objectPosition: 'center'
           }}
         >
-          <source src={backgroundVideo} type="video/mp4" />
+          <source src={backgroundVideo} type="video/webm" />
         </video>
-        
+
         {/* Subtle overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 via-transparent to-blue-900/30" />
-        
+
         {/* Content */}
         <div className="relative z-10 text-center px-4">
-          <h1 
-            className="text-[120px] leading-none font-extrabold"
-            style={{ 
-              opacity: 0.7,
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.3) 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              filter: 'blur(0.5px)'
-            }}
+          <h1
+            className="text-[120px] text-white/90 leading-none font-extrabold"
+
           >
-            WATER GATE
+            sEaDNA
           </h1>
-          
+
           <p className="mt-8 text-xl text-white/90 tracking-wide drop-shadow-lg">
-            Exploring the depths of marine biodiversity
+            Understanding the effect of human action on sea life using molecular and open data
           </p>
-          
+
           {/* Decorative wave line */}
           <div className="mt-12 flex justify-center">
             <div className="w-32 h-1 bg-white/60 rounded-full" />
           </div>
         </div>
-        
+
         {/* Navigation Buttons */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4">
           <button
-            onClick={toggleMap}
-            className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all rounded-full border border-white/30"
-            aria-label="Toggle map view"
+            onClick={() => window.location.href = '/map-page.html'}
+            className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30"
+            style={{
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+              e.currentTarget.style.color = '#022C4D';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.color = 'white';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            }}
+            aria-label="Navigate to map page"
           >
             <MapPin className="w-5 h-5" />
-            <span className="font-medium">View Map</span>
+            <span className="font-medium text-xl">View Map</span>
           </button>
-          
+
           <button
-            onClick={scrollToData}
-            className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all rounded-full border border-white/30"
-            aria-label="Scroll to data section"
+            onClick={() => window.location.href = '/species-dashboard.html'}
+            className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30"
+            style={{
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+              e.currentTarget.style.color = '#022C4D';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.color = 'white';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            }}
+            aria-label="Navigate to data page"
           >
             <BarChart3 className="w-5 h-5" />
-            <span className="font-medium">View Data</span>
+            <span className="font-medium text-xl">View Data</span>
           </button>
         </div>
       </div>
@@ -388,7 +408,7 @@ export default function App() {
                 Real-time fishing activity data showing vessel locations, fishing hours, and effort intensity
               </p>
             </div>
-            
+
             <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="absolute top-4 right-4 z-10">
                 <button
@@ -397,19 +417,19 @@ export default function App() {
                 >
                   <ChevronDown className="w-4 h-4" />
                   Close Map
-        </button>
+                </button>
               </div>
-              
-              <div 
+
+              <div
                 ref={mapRef}
                 className="w-full h-96"
                 style={{ minHeight: '400px' }}
               />
-              
+
               {/* Map Controls Overlay */}
               <div className="absolute top-4 left-4 z-10 bg-white rounded-lg shadow-lg p-4 max-w-xs">
                 <h3 className="font-bold text-gray-800 mb-3">Fishing Effort Controls</h3>
-                
+
                 <div className="space-y-3">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -428,7 +448,7 @@ export default function App() {
                       </SelectContent>
                     </Select>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Analysis Period
@@ -462,319 +482,20 @@ export default function App() {
             </h2>
             <p className="text-lg text-gray-600">
               Analyze fishing activity patterns, vessel distribution, and effort intensity across {selectedRegion === "Tromso" ? "Tromsø waters" : "UK waters"}
-        </p>
-      </div>
-
-          {/* Controls */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12">
-            <div className="w-48">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Region
-              </label>
-              <Select value={selectedRegion} onValueChange={setSelectedRegion}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select region" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="UK">UK Waters</SelectItem>
-                  <SelectItem value="Tromso">Tromsø Area</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="w-48">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Year
-              </label>
-              <Select value={selectedYear} onValueChange={setSelectedYear}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select year" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="2021">2021</SelectItem>
-                  <SelectItem value="2022">2022</SelectItem>
-                  <SelectItem value="2023">2023</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="w-48">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Month
-              </label>
-              <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select month" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="All Months">All Months</SelectItem>
-                  <SelectItem value="1">January</SelectItem>
-                  <SelectItem value="2">February</SelectItem>
-                  <SelectItem value="3">March</SelectItem>
-                  <SelectItem value="4">April</SelectItem>
-                  <SelectItem value="5">May</SelectItem>
-                  <SelectItem value="6">June</SelectItem>
-                  <SelectItem value="7">July</SelectItem>
-                  <SelectItem value="8">August</SelectItem>
-                  <SelectItem value="9">September</SelectItem>
-                  <SelectItem value="10">October</SelectItem>
-                  <SelectItem value="11">November</SelectItem>
-                  <SelectItem value="12">December</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="w-48">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Vessel ID
-              </label>
-              <Select value={selectedVesselId} onValueChange={setSelectedVesselId}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select vessel" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="All Vessels">All Vessels</SelectItem>
-                  {vesselIds.map((vesselId: string) => (
-                    <SelectItem key={vesselId} value={vesselId}>
-                      Vessel {vesselId}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="w-48">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Analysis Type
-              </label>
-              <Select value={selectedTarget} onValueChange={setSelectedTarget}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select analysis type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Fishing Hours">Fishing Hours</SelectItem>
-                  <SelectItem value="Vessel Activity">Vessel Activity</SelectItem>
-                  <SelectItem value="Effort Intensity">Effort Intensity</SelectItem>
-                  <SelectItem value="Spatial Distribution">Spatial Distribution</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="w-48">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Station
-              </label>
-              <select 
-                className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400 transition-colors"
-                value={selectedStation || ""}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "") {
-                    setSelectedStation(null);
-                  } else {
-                    setSelectedStation(value);
-                  }
-                }}
-              >
-                <option value="">All Sampling Locations</option>
-                {samplingLocations.slice(0, 20).map((location) => (
-                  <option key={location.id} value={location.name}>
-                    {location.name}
-                  </option>
-                ))}
-              </select>
-            </div>
+            </p>
           </div>
 
-          {/* Selected Station Info */}
-          {selectedStation && (
-            <div className="mb-8">
-              <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
-                {/* Station Map Card - Left Side */}
-                <Card className="hover:shadow-xl transition-shadow lg:col-span-7">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg font-semibold">
-                      Station Location
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div 
-                      ref={stationMapRef}
-                      className="w-full h-64 rounded-md border border-gray-200"
-                      style={{ minHeight: '256px' }}
-                    />
-                  </CardContent>
-                </Card>
 
-                {/* Station Info Card - Right Side */}
-                <Card className="hover:shadow-xl transition-shadow lg:col-span-3">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center justify-between">
-                      <span className="flex items-center">
-                        <span className="text-2xl mr-2"></span>
-                        {selectedStation}
-                      </span>
-                      <button
-                        onClick={() => setSelectedStation(null)}
-                        className="text-blue-600 hover:text-blue-800 text-sm font-medium bg-white px-3 py-1 rounded-md border border-blue-200 hover:bg-blue-50 transition-colors"
-                      >
-                        ✕ Clear
-                      </button>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <p className="text-gray-600 mb-4">
-                      Data analysis below shows fishing effort patterns for this sampling location.
-                      Click on different map markers to explore other fishing zones.
-                    </p>
-                    
-                    {(() => {
-                      const currentData = getFishingData(selectedRegion, selectedYear, selectedMonth, selectedVesselId);
-                      const locationData = currentData.find(point => 
-                        `Fishing Zone ${point.Lat.toFixed(1)}°N, ${point.Lon.toFixed(1)}°` === selectedStation
-                      );
-                      
-                      if (locationData) {
-                        const avgFishingHours = currentData
-                          .filter(point => point.Lat === locationData.Lat && point.Lon === locationData.Lon)
-                          .reduce((sum, point) => sum + point['Apparent Fishing Hours'], 0) / 
-                          currentData.filter(point => point.Lat === locationData.Lat && point.Lon === locationData.Lon).length;
-                        
-                        return (
-                          <>
-                            <div className="flex justify-between items-center">
-                              <span className="text-gray-600">Avg Fishing Hours:</span>
-                              <span className="font-semibold">{avgFishingHours.toFixed(1)} hrs</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-gray-600">Data Type:</span>
-                              <span className="font-semibold">Fishing Effort</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-gray-600">Sampling Period:</span>
-                              <span className="font-semibold">{selectedYear}</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-gray-600">Coordinates:</span>
-                              <span className="font-semibold">{locationData.Lat.toFixed(2)}°N, {locationData.Lon.toFixed(2)}°</span>
-                            </div>
-                          </>
-                        );
-                      }
-                      return null;
-                    })()}
-                  </CardContent>
-                </Card>
-              </div>
-              
-              {/* Station Navigation */}
-              <div className="flex justify-center items-center gap-4 mt-8 mb-12">
-                <button
-                  onClick={() => navigateStation('prev')}
-                  className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 border border-blue-400/20 hover:border-blue-300/40"
-                  aria-label="Previous station"
-                  style={{
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  }}
-                >
-                  <ChevronLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
-                  <span className="text-sm font-medium">Previous</span>
-                </button>
-                
-                <div className="text-sm text-gray-600 px-4">
-                  {selectedStation && (
-                    <span>
-                      {samplingLocations.findIndex(loc => loc.name === selectedStation) + 1} of {samplingLocations.length}
-                    </span>
-                  )}
-                </div>
-                
-                <button
-                  onClick={() => navigateStation('next')}
-                  className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 border border-blue-400/20 hover:border-blue-300/40"
-                  aria-label="Next station"
-                  style={{
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  }}
-                >
-                  <span className="text-sm font-medium">Next</span>
-                  <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
-              </div>
-            </div>
-          )}
 
-          {/* Fishing Effort Analysis */}
-          <div>
-            <div className="mb-6">
-              <h3 className="text-2xl font-extrabold text-gray-900 mb-4">
-                Fishing Effort Analysis
-              </h3>
-              
-              {/* Analysis Info Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
-                {/* Region Card */}
-                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-                  <div className="text-sm text-indigo-600 font-medium mb-1">Study Region</div>
-                  <div className="text-lg font-bold text-indigo-900">
-                    {selectedRegion === "Tromso" ? "Tromsø" : "UK"}
-                  </div>
-                </div>
-                
-                {/* Year Card */}
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <div className="text-sm text-blue-600 font-medium mb-1">Analysis Year</div>
-                  <div className="text-lg font-bold text-blue-900">{selectedYear}</div>
-                </div>
-                
-                {/* Month Card */}
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <div className="text-sm text-green-600 font-medium mb-1">Time Period</div>
-                  <div className="text-lg font-bold text-green-900">
-                    {selectedMonth === "All Months" ? "All Months" : 
-                     selectedMonth === "1" ? "January" :
-                     selectedMonth === "2" ? "February" :
-                     selectedMonth === "3" ? "March" :
-                     selectedMonth === "4" ? "April" :
-                     selectedMonth === "5" ? "May" :
-                     selectedMonth === "6" ? "June" :
-                     selectedMonth === "7" ? "July" :
-                     selectedMonth === "8" ? "August" :
-                     selectedMonth === "9" ? "September" :
-                     selectedMonth === "10" ? "October" :
-                     selectedMonth === "11" ? "November" :
-                     selectedMonth === "12" ? "December" : selectedMonth}
-                  </div>
-                </div>
-                
-                {/* Vessel Card */}
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                  <div className="text-sm text-purple-600 font-medium mb-1">Vessel Focus</div>
-                  <div className="text-lg font-bold text-purple-900">
-                    {selectedVesselId === "All Vessels" ? "All Vessels" : `Vessel ${selectedVesselId}`}
-                  </div>
-                </div>
-                
-                {/* Analysis Type Card */}
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-                  <div className="text-sm text-orange-600 font-medium mb-1">Analysis Type</div>
-                  <div className="text-lg font-bold text-orange-900">{selectedTarget}</div>
-                </div>
-              </div>
-              
-              {/* Station Info */}
-              {selectedStation && (
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
-                  <div className="text-sm text-gray-600 font-medium mb-1">Selected Location</div>
-                  <div className="text-lg font-bold text-gray-900">{selectedStation}</div>
-                </div>
-              )}
-            </div>
-            
-            <SeasonalData region={selectedRegion} year={selectedYear} month={selectedMonth} vesselId={selectedVesselId} target={selectedTarget} station={selectedStation} />
-          </div>
+
+
+
+
+
+          <DataSourcesSection />
         </div>
       </div>
     </div>
+
   );
 }
