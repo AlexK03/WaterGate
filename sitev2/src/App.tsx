@@ -17,6 +17,7 @@ import {
   SelectValue,
 } from "./components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import backgroundVideo from "./assets/background.mp4";
 
 export default function App() {
   const [selectedRegion, setSelectedRegion] = useState("UK");
@@ -304,14 +305,14 @@ export default function App() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gray-900">
         {/* Custom video background */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover min-h-screen"
+          className="absolute inset-0 w-full h-full object-cover min-h-screen z-0"
           style={{
             width: '100vw',
             height: '100vh',
@@ -319,7 +320,7 @@ export default function App() {
             objectPosition: 'center'
           }}
         >
-          <source src="/background.mp4" type="video/mp4" />
+          <source src={backgroundVideo} type="video/mp4" />
         </video>
         
         {/* Subtle overlay for better text readability */}
