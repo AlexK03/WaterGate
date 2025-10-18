@@ -1,44 +1,34 @@
-import './index.css'
+import '../index.css'
 
-export default function App() {
+export default function Title() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-white">
-      <div className="relative text-center">
-        {/* Main title with ocean background clipped to text */}
-        <h1 
-          className="text-[120px] leading-none font-extrabold text-transparent bg-clip-text animate-ocean-wave"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1640809007069-7bd03ade65aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvY2VhbiUyMHdhdmVzJTIwdW5kZXJ3YXRlcnxlbnwxfHx8fDE3NjA3NzQ5MDR8MA&ixlib=rb-4.1.0&q=80&w=1080')`,
-            backgroundSize: '400% 400%',
-            backgroundPosition: 'center',
-          }}
-        >
-          OCEAN LIFE
+    <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
+      {/* Video Background */}
+      <video
+        key="background-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={`/background.mp4?v=${Date.now()}`} type="video/mp4" />
+      </video>
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/30" />
+      
+      <div className="relative z-10 text-center">
+        {/* Main title */}
+        <h1 className="text-[120px] leading-none font-extrabold text-white drop-shadow-2xl">
+          WATER GATE
         </h1>
         
         {/* Subtle subtitle */}
-        <p className="text-center mt-6 text-slate-600 tracking-wide">
+        <p className="text-center mt-6 text-white/90 tracking-wide drop-shadow-lg">
           Exploring the depths of marine biodiversity
         </p>
       </div>
-      
-      <style>{`
-        @keyframes ocean-wave {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        
-        .animate-ocean-wave {
-          animation: ocean-wave 8s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 }

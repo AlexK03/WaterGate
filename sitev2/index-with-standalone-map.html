@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Gate - Ocean Data Analytics</title>
+    
+    <!-- Leaflet CSS for map functionality -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Main React App -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Standalone Map Section (optional) -->
+    <div id="standalone-map-section" class="hidden">
+      <div class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+              Marine Life Research Stations
+            </h2>
+            <p class="text-lg text-gray-600">
+              Ocean monitoring stations studying marine biodiversity and ecosystem health
+            </p>
+          </div>
+          
+          <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+            <div id="standalone-map-container" class="w-full h-96" style="min-height: 400px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Standalone Map Script -->
+    <script>
+      // Function to show standalone map
+      function showStandaloneMap() {
+        document.getElementById('root').style.display = 'none';
+        document.getElementById('standalone-map-section').classList.remove('hidden');
+        initializeStandaloneMap();
+      }
+
+      // Function to hide standalone map
+      function hideStandaloneMap() {
+        document.getElementById('standalone-map-section').classList.add('hidden');
+        document.getElementById('root').style.display = 'block';
+      }
+
+      // Initialize standalone map
+      function initializeStandaloneMap() {
+        // Only initialize if not already done
+        if (window.standaloneMapInstance) return;
+        
+        // Dynamically load Leaflet if not already loaded
+        if (typeof L === 'undefined') {
+          const script = document.createElement('script');
+          script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+          script.onload = createMap;
+          document.head.appendChild(script);
+        } else {
+          createMap();
+        }
+      }
+
+      function createMap() {
+        const mapContainer = document.getElementById('standalone-map-container');
+        if (!mapContainer) return;
+
+        // Initialize map centered on Norwegian coast towards Iceland
+        const map = L.map(mapContainer).setView([65.0, 5.0], 4);
+        
+        // Add tile layers
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        // Add ocean basemap
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}', {
+          attribution: '© Esri',
+          opacity: 0.7
+        }).addTo(map);
+        
+        // Marine research stations along Norwegian coast towards Iceland and between UK-Norway
+        const oceanData = [
+          { lat: 58.8, lng: 5.2, name: 'Stavanger Marine Station', temp: 8.5, status: 'excellent', depth: '85m', species: 'Cod, Herring, Mackerel' },
+          { lat: 60.1, lng: 5.8, name: 'Bergen Fjord Research', temp: 7.2, status: 'excellent', depth: '120m', species: 'Salmon, Arctic Cod, Krill' },
+          { lat: 61.2, lng: 4.9, name: 'Norwegian Shelf Station', temp: 6.8, status: 'excellent', depth: '200m', species: 'Haddock, Plaice, Shrimp' },
+          { lat: 62.5, lng: 6.1, name: 'Trondheim Bay Monitoring', temp: 6.1, status: 'excellent', depth: '150m', species: 'Pollock, Herring, Crab' },
+          { lat: 64.8, lng: 10.2, name: 'Nordland Coast Station', temp: 5.8, status: 'excellent', depth: '180m', species: 'Cod, Capelin, Jellyfish' },
+          { lat: 67.2, lng: 14.5, name: 'Lofoten Research Buoy', temp: 5.2, status: 'excellent', depth: '300m', species: 'Arctic Cod, Herring, Squid' },
+          { lat: 69.8, lng: 18.9, name: 'Tromsø Marine Lab', temp: 4.8, status: 'excellent', depth: '250m', species: 'Arctic Char, Capelin, Krill' },
+          { lat: 71.2, lng: 25.8, name: 'North Cape Station', temp: 4.1, status: 'excellent', depth: '400m', species: 'Deep-sea Fish, Lanternfish' },
+          { lat: 70.5, lng: -2.1, name: 'North Sea Corridor', temp: 7.8, status: 'good', depth: '120m', species: 'Haddock, Plaice, Sand Eel' },
+          { lat: 59.2, lng: 2.8, name: 'UK-Norway Bridge', temp: 8.9, status: 'good', depth: '95m', species: 'Cod, Herring, Mackerel' },
+          { lat: 66.1, lng: -18.5, name: 'Iceland Approach', temp: 5.5, status: 'excellent', depth: '500m', species: 'Blue Whiting, Mackerel, Squid' },
+          { lat: 63.8, lng: -8.2, name: 'Faroe-Shetland Channel', temp: 6.2, status: 'excellent', depth: '600m', species: 'Deep-sea Fish, Lanternfish' }
+        ];
+        
+        // Color mapping
+        const statusColors = {
+          'excellent': '#0066cc',
+          'good': '#00cc66',
+          'moderate': '#ffcc00',
+          'poor': '#ff6600',
+          'critical': '#cc0000'
+        };
+        
+        // Add markers
+        oceanData.forEach(point => {
+          L.circleMarker([point.lat, point.lng], {
+            radius: 8,
+            fillColor: statusColors[point.status],
+            color: '#fff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+          }).addTo(map).bindPopup(`
+            <div style="min-width: 250px;">
+              <h4 style="margin: 0 0 10px 0; color: #2c5aa0;">${point.name}</h4>
+              <p><strong>Water Temperature:</strong> ${point.temp}°C</p>
+              <p><strong>Depth:</strong> ${point.depth}</p>
+              <p><strong>Marine Life:</strong> ${point.species}</p>
+              <p><strong>Ecosystem Health:</strong> <span style="color: ${statusColors[point.status]}">${point.status.toUpperCase()}</span></p>
+            </div>
+          `);
+        });
+        
+        window.standaloneMapInstance = map;
+      }
+
+      // Make functions globally available
+      window.showStandaloneMap = showStandaloneMap;
+      window.hideStandaloneMap = hideStandaloneMap;
+    </script>
+  </body>
+</html>
