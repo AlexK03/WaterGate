@@ -1,0 +1,2834 @@
+[
+  {
+    "": 1,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-01",
+    "Vessel IDs": 7,
+    "Apparent Fishing Hours": 170.55
+  },
+  {
+    "": 2,
+    "Lat": 69,
+    "Lon": 16.9,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.79
+  },
+  {
+    "": 3,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.88
+  },
+  {
+    "": 4,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.38
+  },
+  {
+    "": 5,
+    "Lat": 68.7,
+    "Lon": 17.4,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 6.2
+  },
+  {
+    "": 6,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.33
+  },
+  {
+    "": 7,
+    "Lat": 68.8,
+    "Lon": 16.6,
+    "Time Range": "2022-01",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 5.1
+  },
+  {
+    "": 8,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-09",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 0.36
+  },
+  {
+    "": 9,
+    "Lat": 68.7,
+    "Lon": 17.3,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 20.94
+  },
+  {
+    "": 10,
+    "Lat": 69.1,
+    "Lon": 16.8,
+    "Time Range": "2022-04",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.96
+  },
+  {
+    "": 11,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-11",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 45.77
+  },
+  {
+    "": 12,
+    "Lat": 69.1,
+    "Lon": 16.9,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.75
+  },
+  {
+    "": 13,
+    "Lat": 69,
+    "Lon": 16.7,
+    "Time Range": "2022-03",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 24
+  },
+  {
+    "": 14,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.63
+  },
+  {
+    "": 15,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.45
+  },
+  {
+    "": 16,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-10",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 0.9
+  },
+  {
+    "": 17,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.22
+  },
+  {
+    "": 18,
+    "Lat": 69.1,
+    "Lon": 17.1,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.8
+  },
+  {
+    "": 19,
+    "Lat": 68.9,
+    "Lon": 17.3,
+    "Time Range": "2022-02",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 4.72
+  },
+  {
+    "": 20,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-11",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 19.7
+  },
+  {
+    "": 21,
+    "Lat": 69,
+    "Lon": 16.9,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.96
+  },
+  {
+    "": 22,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-10",
+    "Vessel IDs": 7,
+    "Apparent Fishing Hours": 8.64
+  },
+  {
+    "": 23,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-11",
+    "Vessel IDs": 7,
+    "Apparent Fishing Hours": 42.23
+  },
+  {
+    "": 24,
+    "Lat": 68.9,
+    "Lon": 17.4,
+    "Time Range": "2022-02",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 15.79
+  },
+  {
+    "": 25,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.06
+  },
+  {
+    "": 26,
+    "Lat": 69.1,
+    "Lon": 17.3,
+    "Time Range": "2022-11",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 3.64
+  },
+  {
+    "": 27,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.04
+  },
+  {
+    "": 28,
+    "Lat": 68.7,
+    "Lon": 17.3,
+    "Time Range": "2022-10",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 5.96
+  },
+  {
+    "": 29,
+    "Lat": 69,
+    "Lon": 17.1,
+    "Time Range": "2022-11",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 19.02
+  },
+  {
+    "": 30,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.24
+  },
+  {
+    "": 31,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.38
+  },
+  {
+    "": 32,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-10",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 42.33
+  },
+  {
+    "": 33,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-11",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 7.04
+  },
+  {
+    "": 34,
+    "Lat": 68.7,
+    "Lon": 17.4,
+    "Time Range": "2022-10",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 18.73
+  },
+  {
+    "": 35,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 4.72
+  },
+  {
+    "": 36,
+    "Lat": 69.1,
+    "Lon": 17,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.63
+  },
+  {
+    "": 37,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-11",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 16.43
+  },
+  {
+    "": 38,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-10",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 17.34
+  },
+  {
+    "": 39,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-07",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 12.31
+  },
+  {
+    "": 40,
+    "Lat": 69,
+    "Lon": 16.6,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.2
+  },
+  {
+    "": 41,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-12",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 6.07
+  },
+  {
+    "": 42,
+    "Lat": 69,
+    "Lon": 17,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.76
+  },
+  {
+    "": 43,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-05",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.05
+  },
+  {
+    "": 44,
+    "Lat": 68.8,
+    "Lon": 17.6,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.08
+  },
+  {
+    "": 45,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-01",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 70.91
+  },
+  {
+    "": 46,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 35.46
+  },
+  {
+    "": 47,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.18
+  },
+  {
+    "": 48,
+    "Lat": 69.1,
+    "Lon": 17.3,
+    "Time Range": "2022-09",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.95
+  },
+  {
+    "": 49,
+    "Lat": 69.1,
+    "Lon": 16.9,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 12.04
+  },
+  {
+    "": 50,
+    "Lat": 69,
+    "Lon": 17.1,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 0.16
+  },
+  {
+    "": 51,
+    "Lat": 69,
+    "Lon": 16.9,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.08
+  },
+  {
+    "": 52,
+    "Lat": 68.9,
+    "Lon": 17.7,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 15.61
+  },
+  {
+    "": 53,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 7.76
+  },
+  {
+    "": 54,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.97
+  },
+  {
+    "": 55,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.43
+  },
+  {
+    "": 56,
+    "Lat": 68.9,
+    "Lon": 17.3,
+    "Time Range": "2022-01",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.26
+  },
+  {
+    "": 57,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-12",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 7.69
+  },
+  {
+    "": 58,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.41
+  },
+  {
+    "": 59,
+    "Lat": 69,
+    "Lon": 17,
+    "Time Range": "2022-11",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 21.46
+  },
+  {
+    "": 60,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-09",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 14.4
+  },
+  {
+    "": 61,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.91
+  },
+  {
+    "": 62,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-10",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 32.88
+  },
+  {
+    "": 63,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-05",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 0.56
+  },
+  {
+    "": 64,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-08",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 17.83
+  },
+  {
+    "": 65,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-12",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 38.02
+  },
+  {
+    "": 66,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-11",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 11.02
+  },
+  {
+    "": 67,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-10",
+    "Vessel IDs": 7,
+    "Apparent Fishing Hours": 12.22
+  },
+  {
+    "": 68,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.25
+  },
+  {
+    "": 69,
+    "Lat": 68.7,
+    "Lon": 17.3,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 12.95
+  },
+  {
+    "": 70,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-09",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 4
+  },
+  {
+    "": 71,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-02",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 13.63
+  },
+  {
+    "": 72,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.85
+  },
+  {
+    "": 73,
+    "Lat": 69.1,
+    "Lon": 17.1,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 14.21
+  },
+  {
+    "": 74,
+    "Lat": 69,
+    "Lon": 16.9,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.68
+  },
+  {
+    "": 75,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.58
+  },
+  {
+    "": 76,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 0.82
+  },
+  {
+    "": 77,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.67
+  },
+  {
+    "": 78,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.24
+  },
+  {
+    "": 79,
+    "Lat": 68.9,
+    "Lon": 17.4,
+    "Time Range": "2022-01",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 10.4
+  },
+  {
+    "": 80,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.7
+  },
+  {
+    "": 81,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-11",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 29.86
+  },
+  {
+    "": 82,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-10",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 5.74
+  },
+  {
+    "": 83,
+    "Lat": 69.1,
+    "Lon": 17,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0
+  },
+  {
+    "": 84,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-11",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 18.35
+  },
+  {
+    "": 85,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-09",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 17.6
+  },
+  {
+    "": 86,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-04",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 7.83
+  },
+  {
+    "": 87,
+    "Lat": 68.9,
+    "Lon": 17.4,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.42
+  },
+  {
+    "": 88,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 32.74
+  },
+  {
+    "": 89,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-04",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 22.16
+  },
+  {
+    "": 90,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.83
+  },
+  {
+    "": 91,
+    "Lat": 68.9,
+    "Lon": 17.6,
+    "Time Range": "2022-02",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 19.64
+  },
+  {
+    "": 92,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 10.03
+  },
+  {
+    "": 93,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-09",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 11.36
+  },
+  {
+    "": 94,
+    "Lat": 68.7,
+    "Lon": 16.8,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.68
+  },
+  {
+    "": 95,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-03",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.25
+  },
+  {
+    "": 96,
+    "Lat": 69,
+    "Lon": 17.2,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.53
+  },
+  {
+    "": 97,
+    "Lat": 68.9,
+    "Lon": 17.2,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.36
+  },
+  {
+    "": 98,
+    "Lat": 68.8,
+    "Lon": 17.1,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 235.48
+  },
+  {
+    "": 99,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.97
+  },
+  {
+    "": 100,
+    "Lat": 69,
+    "Lon": 16.7,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.69
+  },
+  {
+    "": 101,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.66
+  },
+  {
+    "": 102,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.88
+  },
+  {
+    "": 103,
+    "Lat": 68.9,
+    "Lon": 17,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.03
+  },
+  {
+    "": 104,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.15
+  },
+  {
+    "": 105,
+    "Lat": 69,
+    "Lon": 17.6,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.05
+  },
+  {
+    "": 106,
+    "Lat": 68.9,
+    "Lon": 17.3,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 13.93
+  },
+  {
+    "": 107,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 5.24
+  },
+  {
+    "": 108,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-10",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 15.61
+  },
+  {
+    "": 109,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.04
+  },
+  {
+    "": 110,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-09",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 12.64
+  },
+  {
+    "": 111,
+    "Lat": 68.9,
+    "Lon": 17.6,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 5.08
+  },
+  {
+    "": 112,
+    "Lat": 68.9,
+    "Lon": 16.9,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 4.88
+  },
+  {
+    "": 113,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1
+  },
+  {
+    "": 114,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.1
+  },
+  {
+    "": 115,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.12
+  },
+  {
+    "": 116,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.6
+  },
+  {
+    "": 117,
+    "Lat": 69,
+    "Lon": 17.2,
+    "Time Range": "2022-09",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.14
+  },
+  {
+    "": 118,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-02",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 34.29
+  },
+  {
+    "": 119,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.31
+  },
+  {
+    "": 120,
+    "Lat": 68.7,
+    "Lon": 16.9,
+    "Time Range": "2022-01",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 25.13
+  },
+  {
+    "": 121,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.5
+  },
+  {
+    "": 122,
+    "Lat": 68.8,
+    "Lon": 17.1,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 417.67
+  },
+  {
+    "": 123,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-11",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 33.97
+  },
+  {
+    "": 124,
+    "Lat": 68.9,
+    "Lon": 16.9,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.67
+  },
+  {
+    "": 125,
+    "Lat": 68.9,
+    "Lon": 16.5,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.69
+  },
+  {
+    "": 126,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-04",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 9.72
+  },
+  {
+    "": 127,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 58.19
+  },
+  {
+    "": 128,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 10.29
+  },
+  {
+    "": 129,
+    "Lat": 69,
+    "Lon": 16.6,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.07
+  },
+  {
+    "": 130,
+    "Lat": 68.8,
+    "Lon": 17.1,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 18.15
+  },
+  {
+    "": 131,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-01",
+    "Vessel IDs": 16,
+    "Apparent Fishing Hours": 221.4
+  },
+  {
+    "": 132,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.53
+  },
+  {
+    "": 133,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.3
+  },
+  {
+    "": 134,
+    "Lat": 68.9,
+    "Lon": 16.9,
+    "Time Range": "2022-11",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 23.11
+  },
+  {
+    "": 135,
+    "Lat": 69.1,
+    "Lon": 16.6,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1
+  },
+  {
+    "": 136,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.81
+  },
+  {
+    "": 137,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.97
+  },
+  {
+    "": 138,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-10",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 32.47
+  },
+  {
+    "": 139,
+    "Lat": 69.1,
+    "Lon": 17.2,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.82
+  },
+  {
+    "": 140,
+    "Lat": 68.9,
+    "Lon": 16.5,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.4
+  },
+  {
+    "": 141,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.98
+  },
+  {
+    "": 142,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3
+  },
+  {
+    "": 143,
+    "Lat": 68.9,
+    "Lon": 17.7,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.15
+  },
+  {
+    "": 144,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.98
+  },
+  {
+    "": 145,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-10",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.21
+  },
+  {
+    "": 146,
+    "Lat": 68.7,
+    "Lon": 16.9,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.06
+  },
+  {
+    "": 147,
+    "Lat": 69,
+    "Lon": 16.7,
+    "Time Range": "2022-04",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 33.8
+  },
+  {
+    "": 148,
+    "Lat": 68.8,
+    "Lon": 17.1,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.94
+  },
+  {
+    "": 149,
+    "Lat": 69,
+    "Lon": 17.2,
+    "Time Range": "2022-11",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 21
+  },
+  {
+    "": 150,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-10",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 8.27
+  },
+  {
+    "": 151,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-05",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 4.51
+  },
+  {
+    "": 152,
+    "Lat": 69,
+    "Lon": 16.6,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.31
+  },
+  {
+    "": 153,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.15
+  },
+  {
+    "": 154,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-09",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 43.93
+  },
+  {
+    "": 155,
+    "Lat": 68.9,
+    "Lon": 17.2,
+    "Time Range": "2022-02",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 21.36
+  },
+  {
+    "": 156,
+    "Lat": 69,
+    "Lon": 16.5,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.74
+  },
+  {
+    "": 157,
+    "Lat": 69,
+    "Lon": 17.6,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.22
+  },
+  {
+    "": 158,
+    "Lat": 68.9,
+    "Lon": 16.5,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.13
+  },
+  {
+    "": 159,
+    "Lat": 68.9,
+    "Lon": 16.9,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.63
+  },
+  {
+    "": 160,
+    "Lat": 68.9,
+    "Lon": 17.6,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.61
+  },
+  {
+    "": 161,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.63
+  },
+  {
+    "": 162,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.08
+  },
+  {
+    "": 163,
+    "Lat": 68.9,
+    "Lon": 17.7,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 24.61
+  },
+  {
+    "": 164,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-11",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 17.05
+  },
+  {
+    "": 165,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 4
+  },
+  {
+    "": 166,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.33
+  },
+  {
+    "": 167,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-11",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 69.01
+  },
+  {
+    "": 168,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-04",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 0.3
+  },
+  {
+    "": 169,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 22.37
+  },
+  {
+    "": 170,
+    "Lat": 68.8,
+    "Lon": 16.6,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.24
+  },
+  {
+    "": 171,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.9
+  },
+  {
+    "": 172,
+    "Lat": 69.1,
+    "Lon": 16.7,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.27
+  },
+  {
+    "": 173,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 15.84
+  },
+  {
+    "": 174,
+    "Lat": 69,
+    "Lon": 17.6,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 18.24
+  },
+  {
+    "": 175,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 104.85
+  },
+  {
+    "": 176,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.79
+  },
+  {
+    "": 177,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.19
+  },
+  {
+    "": 178,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-05",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 15.37
+  },
+  {
+    "": 179,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 5.95
+  },
+  {
+    "": 180,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-11",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 10.94
+  },
+  {
+    "": 181,
+    "Lat": 69,
+    "Lon": 17.2,
+    "Time Range": "2022-05",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.8
+  },
+  {
+    "": 182,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-03",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 17.06
+  },
+  {
+    "": 183,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-07",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 6.69
+  },
+  {
+    "": 184,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 4.41
+  },
+  {
+    "": 185,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-02",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 47.32
+  },
+  {
+    "": 186,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.41
+  },
+  {
+    "": 187,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-08",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 10.13
+  },
+  {
+    "": 188,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-03",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.28
+  },
+  {
+    "": 189,
+    "Lat": 68.9,
+    "Lon": 17.4,
+    "Time Range": "2022-10",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 28.75
+  },
+  {
+    "": 190,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 10.13
+  },
+  {
+    "": 191,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.71
+  },
+  {
+    "": 192,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-12",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 14.53
+  },
+  {
+    "": 193,
+    "Lat": 68.9,
+    "Lon": 16.9,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.01
+  },
+  {
+    "": 194,
+    "Lat": 69,
+    "Lon": 17,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.01
+  },
+  {
+    "": 195,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.96
+  },
+  {
+    "": 196,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 10.88
+  },
+  {
+    "": 197,
+    "Lat": 68.9,
+    "Lon": 17.3,
+    "Time Range": "2022-10",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.51
+  },
+  {
+    "": 198,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 37.57
+  },
+  {
+    "": 199,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-05",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 10.28
+  },
+  {
+    "": 200,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-12",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.35
+  },
+  {
+    "": 201,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 7.06
+  },
+  {
+    "": 202,
+    "Lat": 69,
+    "Lon": 16.7,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.62
+  },
+  {
+    "": 203,
+    "Lat": 68.8,
+    "Lon": 16.6,
+    "Time Range": "2022-12",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 5.92
+  },
+  {
+    "": 204,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1
+  },
+  {
+    "": 205,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-10",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 7.31
+  },
+  {
+    "": 206,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-05",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 15.24
+  },
+  {
+    "": 207,
+    "Lat": 69.1,
+    "Lon": 17.3,
+    "Time Range": "2022-03",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 6.06
+  },
+  {
+    "": 208,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 42.95
+  },
+  {
+    "": 209,
+    "Lat": 68.8,
+    "Lon": 16.6,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.33
+  },
+  {
+    "": 210,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-01",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 47.18
+  },
+  {
+    "": 211,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.28
+  },
+  {
+    "": 212,
+    "Lat": 69.1,
+    "Lon": 17.1,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.7
+  },
+  {
+    "": 213,
+    "Lat": 68.9,
+    "Lon": 17,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.67
+  },
+  {
+    "": 214,
+    "Lat": 68.9,
+    "Lon": 17.4,
+    "Time Range": "2022-11",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 5.66
+  },
+  {
+    "": 215,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 20.61
+  },
+  {
+    "": 216,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-09",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.95
+  },
+  {
+    "": 217,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-03",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 8.86
+  },
+  {
+    "": 218,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-05",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 41.72
+  },
+  {
+    "": 219,
+    "Lat": 69,
+    "Lon": 16.7,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 16.98
+  },
+  {
+    "": 220,
+    "Lat": 68.8,
+    "Lon": 16.6,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.38
+  },
+  {
+    "": 221,
+    "Lat": 68.7,
+    "Lon": 17.4,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.46
+  },
+  {
+    "": 222,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-06",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 12.92
+  },
+  {
+    "": 223,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-07",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 29.15
+  },
+  {
+    "": 224,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.35
+  },
+  {
+    "": 225,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.26
+  },
+  {
+    "": 226,
+    "Lat": 68.9,
+    "Lon": 17,
+    "Time Range": "2022-11",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 14.28
+  },
+  {
+    "": 227,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 10.02
+  },
+  {
+    "": 228,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.3
+  },
+  {
+    "": 229,
+    "Lat": 68.8,
+    "Lon": 16.9,
+    "Time Range": "2022-10",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 7.11
+  },
+  {
+    "": 230,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 11.46
+  },
+  {
+    "": 231,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.97
+  },
+  {
+    "": 232,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-02",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 10.28
+  },
+  {
+    "": 233,
+    "Lat": 69,
+    "Lon": 17.1,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1
+  },
+  {
+    "": 234,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.9
+  },
+  {
+    "": 235,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.14
+  },
+  {
+    "": 236,
+    "Lat": 68.9,
+    "Lon": 17.1,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 21.03
+  },
+  {
+    "": 237,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-07",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 9.46
+  },
+  {
+    "": 238,
+    "Lat": 69,
+    "Lon": 17.2,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 5.15
+  },
+  {
+    "": 239,
+    "Lat": 68.8,
+    "Lon": 16.6,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.99
+  },
+  {
+    "": 240,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.55
+  },
+  {
+    "": 241,
+    "Lat": 68.8,
+    "Lon": 16.8,
+    "Time Range": "2022-10",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 15.02
+  },
+  {
+    "": 242,
+    "Lat": 68.9,
+    "Lon": 17.7,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.47
+  },
+  {
+    "": 243,
+    "Lat": 69.1,
+    "Lon": 16.7,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.44
+  },
+  {
+    "": 244,
+    "Lat": 69,
+    "Lon": 17.6,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 7.26
+  },
+  {
+    "": 245,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 5.7
+  },
+  {
+    "": 246,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 17.28
+  },
+  {
+    "": 247,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-07",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.93
+  },
+  {
+    "": 248,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-01",
+    "Vessel IDs": 7,
+    "Apparent Fishing Hours": 50.98
+  },
+  {
+    "": 249,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.02
+  },
+  {
+    "": 250,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-01",
+    "Vessel IDs": 12,
+    "Apparent Fishing Hours": 209.69
+  },
+  {
+    "": 251,
+    "Lat": 68.7,
+    "Lon": 17.3,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 4.37
+  },
+  {
+    "": 252,
+    "Lat": 69,
+    "Lon": 16.7,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.89
+  },
+  {
+    "": 253,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-03",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 11.53
+  },
+  {
+    "": 254,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-02",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 43.97
+  },
+  {
+    "": 255,
+    "Lat": 68.9,
+    "Lon": 16.9,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3
+  },
+  {
+    "": 256,
+    "Lat": 68.9,
+    "Lon": 17.6,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.28
+  },
+  {
+    "": 257,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-12",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.85
+  },
+  {
+    "": 258,
+    "Lat": 69,
+    "Lon": 17,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.66
+  },
+  {
+    "": 259,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.2
+  },
+  {
+    "": 260,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-07",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 5.15
+  },
+  {
+    "": 261,
+    "Lat": 69.1,
+    "Lon": 17.1,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.89
+  },
+  {
+    "": 262,
+    "Lat": 69,
+    "Lon": 16.9,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 0.81
+  },
+  {
+    "": 263,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 5.95
+  },
+  {
+    "": 264,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-12",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.04
+  },
+  {
+    "": 265,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.39
+  },
+  {
+    "": 266,
+    "Lat": 69.1,
+    "Lon": 16.9,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.46
+  },
+  {
+    "": 267,
+    "Lat": 69.1,
+    "Lon": 17.3,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.86
+  },
+  {
+    "": 268,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.11
+  },
+  {
+    "": 269,
+    "Lat": 68.7,
+    "Lon": 16.9,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.82
+  },
+  {
+    "": 270,
+    "Lat": 69.1,
+    "Lon": 17,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.94
+  },
+  {
+    "": 271,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.46
+  },
+  {
+    "": 272,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-11",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.24
+  },
+  {
+    "": 273,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.01
+  },
+  {
+    "": 274,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.59
+  },
+  {
+    "": 275,
+    "Lat": 68.7,
+    "Lon": 16.9,
+    "Time Range": "2022-12",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 6.36
+  },
+  {
+    "": 276,
+    "Lat": 69.1,
+    "Lon": 16.8,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.44
+  },
+  {
+    "": 277,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-07",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 17.92
+  },
+  {
+    "": 278,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 9.07
+  },
+  {
+    "": 279,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 8.46
+  },
+  {
+    "": 280,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-09",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 4.95
+  },
+  {
+    "": 281,
+    "Lat": 69,
+    "Lon": 17.6,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.21
+  },
+  {
+    "": 282,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 14.45
+  },
+  {
+    "": 283,
+    "Lat": 69,
+    "Lon": 16.9,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.44
+  },
+  {
+    "": 284,
+    "Lat": 69.1,
+    "Lon": 17.1,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 12.52
+  },
+  {
+    "": 285,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-07",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 13.36
+  },
+  {
+    "": 286,
+    "Lat": 69,
+    "Lon": 17.3,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.26
+  },
+  {
+    "": 287,
+    "Lat": 69,
+    "Lon": 17,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 9.17
+  },
+  {
+    "": 288,
+    "Lat": 68.9,
+    "Lon": 17.6,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.64
+  },
+  {
+    "": 289,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-10",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 22.58
+  },
+  {
+    "": 290,
+    "Lat": 68.7,
+    "Lon": 16.8,
+    "Time Range": "2022-12",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 3.27
+  },
+  {
+    "": 291,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.7
+  },
+  {
+    "": 292,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.51
+  },
+  {
+    "": 293,
+    "Lat": 69.1,
+    "Lon": 17,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.43
+  },
+  {
+    "": 294,
+    "Lat": 69.1,
+    "Lon": 16.8,
+    "Time Range": "2022-12",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 5.6
+  },
+  {
+    "": 295,
+    "Lat": 69.1,
+    "Lon": 17.3,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.38
+  },
+  {
+    "": 296,
+    "Lat": 69.1,
+    "Lon": 16.9,
+    "Time Range": "2022-08",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.83
+  },
+  {
+    "": 297,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-05",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 4
+  },
+  {
+    "": 298,
+    "Lat": 68.8,
+    "Lon": 17.1,
+    "Time Range": "2022-03",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 4.58
+  },
+  {
+    "": 299,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-06",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.31
+  },
+  {
+    "": 300,
+    "Lat": 69.1,
+    "Lon": 16.8,
+    "Time Range": "2022-09",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 15.69
+  },
+  {
+    "": 301,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 109.34
+  },
+  {
+    "": 302,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-01",
+    "Vessel IDs": 11,
+    "Apparent Fishing Hours": 36.61
+  },
+  {
+    "": 303,
+    "Lat": 69.1,
+    "Lon": 17.6,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.65
+  },
+  {
+    "": 304,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-01",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 59.49
+  },
+  {
+    "": 305,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-08",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.55
+  },
+  {
+    "": 306,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.03
+  },
+  {
+    "": 307,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-01",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 20.26
+  },
+  {
+    "": 308,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-07",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 11.66
+  },
+  {
+    "": 309,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-06",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.8
+  },
+  {
+    "": 310,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.11
+  },
+  {
+    "": 311,
+    "Lat": 69.1,
+    "Lon": 16.8,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.13
+  },
+  {
+    "": 312,
+    "Lat": 68.9,
+    "Lon": 17.2,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 3.46
+  },
+  {
+    "": 313,
+    "Lat": 68.8,
+    "Lon": 17.5,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.96
+  },
+  {
+    "": 314,
+    "Lat": 69,
+    "Lon": 17.1,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.01
+  },
+  {
+    "": 315,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-10",
+    "Vessel IDs": 4,
+    "Apparent Fishing Hours": 5.9
+  },
+  {
+    "": 316,
+    "Lat": 68.8,
+    "Lon": 17.4,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.9
+  },
+  {
+    "": 317,
+    "Lat": 69.1,
+    "Lon": 17.1,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.44
+  },
+  {
+    "": 318,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 11.39
+  },
+  {
+    "": 319,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.73
+  },
+  {
+    "": 320,
+    "Lat": 68.8,
+    "Lon": 17.6,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.68
+  },
+  {
+    "": 321,
+    "Lat": 69,
+    "Lon": 16.9,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 0.28
+  },
+  {
+    "": 322,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 14.06
+  },
+  {
+    "": 323,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.11
+  },
+  {
+    "": 324,
+    "Lat": 69.1,
+    "Lon": 17.5,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.16
+  },
+  {
+    "": 325,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 8.97
+  },
+  {
+    "": 326,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-08",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 18.02
+  },
+  {
+    "": 327,
+    "Lat": 69,
+    "Lon": 17.2,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.18
+  },
+  {
+    "": 328,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-05",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 18.4
+  },
+  {
+    "": 329,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-02",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 48.81
+  },
+  {
+    "": 330,
+    "Lat": 68.7,
+    "Lon": 16.9,
+    "Time Range": "2022-10",
+    "Vessel IDs": 6,
+    "Apparent Fishing Hours": 15.66
+  },
+  {
+    "": 331,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-02",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.95
+  },
+  {
+    "": 332,
+    "Lat": 68.9,
+    "Lon": 17.5,
+    "Time Range": "2022-11",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 15.1
+  },
+  {
+    "": 333,
+    "Lat": 68.8,
+    "Lon": 17.2,
+    "Time Range": "2022-07",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.85
+  },
+  {
+    "": 334,
+    "Lat": 69.1,
+    "Lon": 17.3,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.47
+  },
+  {
+    "": 335,
+    "Lat": 68.9,
+    "Lon": 17.2,
+    "Time Range": "2022-10",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.1
+  },
+  {
+    "": 336,
+    "Lat": 69.1,
+    "Lon": 16.8,
+    "Time Range": "2022-10",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.29
+  },
+  {
+    "": 337,
+    "Lat": 68.9,
+    "Lon": 16.7,
+    "Time Range": "2022-05",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 1.99
+  },
+  {
+    "": 338,
+    "Lat": 68.7,
+    "Lon": 17,
+    "Time Range": "2022-07",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.74
+  },
+  {
+    "": 339,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-12",
+    "Vessel IDs": 5,
+    "Apparent Fishing Hours": 18.68
+  },
+  {
+    "": 340,
+    "Lat": 69,
+    "Lon": 16.6,
+    "Time Range": "2022-11",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.15
+  },
+  {
+    "": 341,
+    "Lat": 68.9,
+    "Lon": 16.9,
+    "Time Range": "2022-02",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 2.12
+  },
+  {
+    "": 342,
+    "Lat": 69,
+    "Lon": 16.8,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 15.76
+  },
+  {
+    "": 343,
+    "Lat": 68.7,
+    "Lon": 17.1,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 6.7
+  },
+  {
+    "": 344,
+    "Lat": 69.1,
+    "Lon": 17.1,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 3.19
+  },
+  {
+    "": 345,
+    "Lat": 69,
+    "Lon": 17.4,
+    "Time Range": "2022-05",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 9.16
+  },
+  {
+    "": 346,
+    "Lat": 68.9,
+    "Lon": 16.5,
+    "Time Range": "2022-01",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.36
+  },
+  {
+    "": 347,
+    "Lat": 68.7,
+    "Lon": 17.2,
+    "Time Range": "2022-03",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 6.3
+  },
+  {
+    "": 348,
+    "Lat": 68.8,
+    "Lon": 17.3,
+    "Time Range": "2022-01",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 14.43
+  },
+  {
+    "": 349,
+    "Lat": 68.9,
+    "Lon": 16.8,
+    "Time Range": "2022-03",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 17.51
+  },
+  {
+    "": 350,
+    "Lat": 68.7,
+    "Lon": 16.9,
+    "Time Range": "2022-11",
+    "Vessel IDs": 2,
+    "Apparent Fishing Hours": 6.72
+  },
+  {
+    "": 351,
+    "Lat": 68.9,
+    "Lon": 16.6,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 1.07
+  },
+  {
+    "": 352,
+    "Lat": 69,
+    "Lon": 17.5,
+    "Time Range": "2022-03",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 7.8
+  },
+  {
+    "": 353,
+    "Lat": 69.1,
+    "Lon": 17.4,
+    "Time Range": "2022-04",
+    "Vessel IDs": 1,
+    "Apparent Fishing Hours": 2.8
+  },
+  {
+    "": 354,
+    "Lat": 68.8,
+    "Lon": 16.7,
+    "Time Range": "2022-09",
+    "Vessel IDs": 3,
+    "Apparent Fishing Hours": 2.1
+  }
+]

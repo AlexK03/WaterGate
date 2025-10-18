@@ -26,7 +26,7 @@ export default function Title() {
         
         {/* Subtle subtitle */}
         <p className="text-center mt-6 text-white/90 tracking-wide drop-shadow-lg">
-          Exploring the depths of marine biodiversity
+          Connecting the ocean data to the people
         </p>
       </div>
     </div>
