@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Gate - Interactive Map</title>
+    
+    <!-- Leaflet CSS for map functionality -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(30, 64, 175, 0.6) 50%, rgba(59, 130, 246, 0.4) 100%);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card {
+            background-color: hsl(var(--card));
+            color: hsl(var(--card-foreground));
+            border-radius: 12px;
+            border: 1px solid hsl(var(--border));
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .card-header {
+            padding: 24px 24px 12px;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        .card-content {
+            padding: 24px;
+        }
+        
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 0;
+        }
+        
+        .data-sources-section {
+            background-color: hsl(var(--card));
+            color: hsl(var(--card-foreground));
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 60px auto 40px;
+            border-radius: 12px;
+            border: 1px solid hsl(var(--border));
+            box-sizing: border-box;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .data-sources-section:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 24px 12px;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        .logo-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex: 1;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo.active,
+        .logo:hover {
+            opacity: 1;
+        }
+        
+        .toggle-icon {
+            cursor: pointer;
+            color: hsl(var(--primary));
+            margin-left: 20px;
+            transition: color 0.2s ease;
+        }
+        
+        .toggle-icon:hover {
+            color: hsl(var(--primary) / 0.8);
+        }
+        
+        .details-slide {
+            padding: 24px;
+        }
+        
+        .details-slide h4 {
+            margin-bottom: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .details-slide p {
+            margin-bottom: 16px;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.5;
+        }
+        
+        .details-slide ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .details-slide li {
+            margin-bottom: 8px;
+        }
+        
+        .details-slide a {
+            color: #158FAB;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .details-slide a:hover {
+            text-decoration: underline;
+            color: #136E95;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-row {
+                gap: 20px;
+            }
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            .toggle-icon {
+                margin-left: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .toggle-icon {
+                margin-top: 10px;
+            }
+            .logo-row {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <video class="hero-video" autoplay muted loop>
+            <source src="/background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content min-h-screen w-full flex items-center justify-center overflow-hidden">
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6 leading-tight">
+                    Water Gate
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Advanced Marine Biodiversity Analytics Platform
+                </p>
+                <p class="text-lg text-white/80 max-w-2xl mx-auto">
+                    Real-time ocean monitoring, fishing effort analysis, and marine ecosystem insights
+                </p>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4">
+            <button
+                onclick="window.location.href='/'"
+                class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
+                aria-label="Back to main page"
+            >
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span class="font-medium">Back to Home</span>
+            </button>
+            
+                   <button
+                       onclick="window.location.href='/species-dashboard.html'"
+                       class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
+                       aria-label="Navigate to species dashboard"
+                   >
+                       <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                       <span class="font-medium">View Data</span>
+                   </button>
+        </div>
+    </div>
+
+    <!-- Interactive Map Section -->
+    <div class="relative bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+                    UK Fishing Effort Monitoring - 2023
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Real-time fishing activity data showing vessel locations, fishing hours, and effort intensity
+                </p>
+            </div>
+            
+            <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="absolute top-4 right-4 z-10">
+                    <button
+                        onclick="window.location.href='/'"
+                        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                    >
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        Back to Home
+                    </button>
+                </div>
+                
+                <div id="map" class="w-full h-96" style="min-height: 400px;"></div>
+                
+                <!-- Map Controls Overlay -->
+                <div class="absolute top-4 left-4 z-10 bg-white rounded-lg shadow-lg p-4 max-w-xs">
+                    <h3 class="font-bold text-gray-800 mb-3">Fishing Effort Controls</h3>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Data Parameter
+                            </label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="fishing-hours">Fishing Hours</option>
+                                <option value="vessel-count">Vessel Count</option>
+                                <option value="effort-intensity">Effort Intensity</option>
+                                <option value="time-period">Time Period</option>
+                                <option value="location-density">Location Density</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Analysis Period
+                            </label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="monthly">Monthly Data</option>
+                                <option value="quarterly">Quarterly Analysis</option>
+                                <option value="annual">Annual Trends</option>
+                                <option value="comparison">Year Comparison</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Section -->
+    <div id="data-section" class="bg-white py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+                    UK Fishing Effort Analytics - 2023
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Analyze fishing activity patterns, vessel distribution, and effort intensity across UK waters
+                </p>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex flex-wrap gap-4 justify-center mb-12">
+                <div class="w-48">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Select Region
+                    </label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="UK" selected>UK Waters</option>
+                        <option value="Tromso">Tromsø Area</option>
+                    </select>
+                </div>
+
+                <div class="w-48">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Select Year
+                    </label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023" selected>2023</option>
+                    </select>
+                </div>
+
+                <div class="w-48">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Select Month
+                    </label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="All Months" selected>All Months</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+
+                <div class="w-48">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Select Vessel ID
+                    </label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="All Vessels" selected>All Vessels</option>
+                        <option value="V001">Vessel V001</option>
+                        <option value="V002">Vessel V002</option>
+                        <option value="V003">Vessel V003</option>
+                        <option value="V004">Vessel V004</option>
+                        <option value="V005">Vessel V005</option>
+                    </select>
+                </div>
+
+                <div class="w-48">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Select Analysis Type
+                    </label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="Fishing Hours" selected>Fishing Hours</option>
+                        <option value="Vessel Activity">Vessel Activity</option>
+                        <option value="Effort Intensity">Effort Intensity</option>
+                        <option value="Spatial Distribution">Spatial Distribution</option>
+                    </select>
+                </div>
+
+                <div class="w-48">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Select Station
+                    </label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="" selected>All Sampling Locations</option>
+                        <option value="Fishing Zone 55.5°N, -3.0°">Fishing Zone 55.5°N, -3.0°</option>
+                        <option value="Fishing Zone 56.0°N, -2.5°">Fishing Zone 56.0°N, -2.5°</option>
+                        <option value="Fishing Zone 54.5°N, -3.5°">Fishing Zone 54.5°N, -3.5°</option>
+                        <option value="Fishing Zone 55.8°N, -2.8°">Fishing Zone 55.8°N, -2.8°</option>
+                        <option value="Fishing Zone 56.2°N, -2.2°">Fishing Zone 56.2°N, -2.2°</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Fishing Effort Analysis -->
+            <div>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-extrabold text-gray-900 mb-4">
+                        Fishing Effort Analysis
+                    </h3>
+                    
+                    <!-- Analysis Info Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+                        <!-- Region Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm text-indigo-600 font-medium">Study Region</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="text-lg font-bold text-indigo-900">UK</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Year Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm text-blue-600 font-medium">Analysis Year</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="text-lg font-bold text-blue-900">2023</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Month Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm text-green-600 font-medium">Time Period</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="text-lg font-bold text-green-900">All Months</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Vessel Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm text-purple-600 font-medium">Vessel Focus</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="text-lg font-bold text-purple-900">All Vessels</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Analysis Type Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm text-orange-600 font-medium">Analysis Type</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="text-lg font-bold text-orange-900">Fishing Hours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seasonal Data Cards -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Seasonal Fishing Patterns</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Spring Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title flex items-center justify-between">
+                                    <span>Spring</span>
+                                    <span class="text-2xl text-green-600">↑</span>
+                                </h4>
+                            </div>
+                            <div class="card-content space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Fishing Hours:</span>
+                                    <span class="font-semibold">1,250 hrs</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Vessel Activity:</span>
+                                    <span class="font-semibold">3.2 avg</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Change:</span>
+                                    <span class="font-semibold text-green-600">+15%</span>
+                                </div>
+                                <div class="mt-4 pt-3 border-t">
+                                    <div class="text-sm text-gray-500">Analysis: Fishing Hours</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Summer Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title flex items-center justify-between">
+                                    <span>Summer</span>
+                                    <span class="text-2xl text-green-600">↑</span>
+                                </h4>
+                            </div>
+                            <div class="card-content space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Fishing Hours:</span>
+                                    <span class="font-semibold">1,850 hrs</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Vessel Activity:</span>
+                                    <span class="font-semibold">4.1 avg</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Change:</span>
+                                    <span class="font-semibold text-green-600">+22%</span>
+                                </div>
+                                <div class="mt-4 pt-3 border-t">
+                                    <div class="text-sm text-gray-500">Analysis: Fishing Hours</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Fall Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title flex items-center justify-between">
+                                    <span>Fall</span>
+                                    <span class="text-2xl text-red-600">↓</span>
+                                </h4>
+                            </div>
+                            <div class="card-content space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Fishing Hours:</span>
+                                    <span class="font-semibold">980 hrs</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Vessel Activity:</span>
+                                    <span class="font-semibold">2.8 avg</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Change:</span>
+                                    <span class="font-semibold text-red-600">-8%</span>
+                                </div>
+                                <div class="mt-4 pt-3 border-t">
+                                    <div class="text-sm text-gray-500">Analysis: Fishing Hours</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Winter Card -->
+                        <div class="card hover:shadow-xl transition-shadow">
+                            <div class="card-header">
+                                <h4 class="card-title flex items-center justify-between">
+                                    <span>Winter</span>
+                                    <span class="text-2xl text-gray-600">→</span>
+                                </h4>
+                            </div>
+                            <div class="card-content space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Fishing Hours:</span>
+                                    <span class="font-semibold">720 hrs</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Vessel Activity:</span>
+                                    <span class="font-semibold">2.1 avg</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Change:</span>
+                                    <span class="font-semibold text-gray-600">0%</span>
+                                </div>
+                                <div class="mt-4 pt-3 border-t">
+                                    <div class="text-sm text-gray-500">Analysis: Fishing Hours</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Sources Section -->
+    <section class="data-sources-section">
+        <div class="header-row">
+            <div class="logo-row">
+                <img src="/logos/emodnet-logo.jpg" alt="EMODnet" class="logo" />
+                <img src="/logos/emo-bon-logo.png" alt="EMO BON" class="logo" />
+                <img src="/logos/marine-data-provider-logo.png" alt="Marine Data Provider" class="logo" />
+            </div>
+            <div class="toggle-icon" onclick="toggleDetails()">
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+        </div>
+        
+        <div id="details-slide" class="details-slide" style="display: none;">
+            <h4>EMODnet</h4>
+            <p>European Marine Observation and Data Network provides marine data and information.</p>
+            <ul>
+                <li><a href="https://emodnet.ec.europa.eu" target="_blank">Website</a></li>
+                <li><a href="https://portal.emodnet.eu" target="_blank">Data Portal</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Initialize map
+        const map = L.map('map').setView([55.0, -3.0], 6);
+        
+        // Add tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        // Sample fishing data points (you can replace with real data)
+        const fishingData = [
+            { lat: 55.5, lng: -3.0, hours: 120, vessels: 3, intensity: 'High' },
+            { lat: 56.0, lng: -2.5, hours: 85, vessels: 2, intensity: 'Medium' },
+            { lat: 54.5, lng: -3.5, hours: 200, vessels: 5, intensity: 'Very High' },
+            { lat: 55.8, lng: -2.8, hours: 60, vessels: 1, intensity: 'Low' },
+            { lat: 56.2, lng: -2.2, hours: 150, vessels: 4, intensity: 'High' }
+        ];
+        
+        // Add markers for fishing locations
+        fishingData.forEach(point => {
+            const marker = L.circleMarker([point.lat, point.lng], {
+                radius: Math.max(8, point.hours / 20),
+                fillColor: point.intensity === 'Very High' ? '#dc2626' : 
+                          point.intensity === 'High' ? '#ea580c' :
+                          point.intensity === 'Medium' ? '#d97706' : '#65a30d',
+                color: '#fff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map);
+            
+            marker.bindPopup(`
+                <div class="p-2">
+                    <h3 class="font-bold text-lg mb-2">Fishing Zone</h3>
+                    <p><strong>Fishing Hours:</strong> ${point.hours} hrs</p>
+                    <p><strong>Vessels:</strong> ${point.vessels}</p>
+                    <p><strong>Intensity:</strong> ${point.intensity}</p>
+                    <p><strong>Coordinates:</strong> ${point.lat.toFixed(2)}°N, ${point.lng.toFixed(2)}°</p>
+                </div>
+            `);
+        });
+        
+        // Toggle details function
+        function toggleDetails() {
+            const detailsSlide = document.getElementById('details-slide');
+            const icon = document.querySelector('.toggle-icon i');
+            
+            if (detailsSlide.style.display === 'none') {
+                detailsSlide.style.display = 'block';
+                icon.setAttribute('data-lucide', 'chevron-up');
+            } else {
+                detailsSlide.style.display = 'none';
+                icon.setAttribute('data-lucide', 'chevron-down');
+            }
+            
+            // Re-initialize icons after change
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
