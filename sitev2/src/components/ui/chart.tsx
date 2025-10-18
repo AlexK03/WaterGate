@@ -118,8 +118,7 @@ function ChartTooltipContent({
   color,
   nameKey,
   labelKey,
-  ...props
-  }: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+}: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
   React.ComponentProps<"div"> & {
     hideLabel?: boolean;
     hideIndicator?: boolean;
