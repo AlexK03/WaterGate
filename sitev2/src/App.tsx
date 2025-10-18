@@ -33,10 +33,6 @@ export default function App() {
   const stationMapRef = useRef<HTMLDivElement>(null);
   const stationMapInstanceRef = useRef<any>(null);
 
-  const scrollToData = () => {
-    document.getElementById('data-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const toggleMap = () => {
     setShowMap(!showMap);
   };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './style.css'; // 👈 Using external CSS
@@ -48,24 +48,32 @@ const dataSources = [
 const AUTO_CLOSE_MS = 8000;
 
 const DataSourcesPanel = () => {
-  const [activeSource, setActiveSource] = useState(null);
-  const autoCloseTimerRef = useRef(null);
+  const [activeSource, setActiveSource] = useState<string | null>(null);
+  const autoCloseTimerRef = useRef<number | null>(null);
 
-  const toggleSource = (id) => {
+  const toggleSource = (id: string) => {
     setActiveSource((prev) => (prev === id ? null : id));
   };
 
   useEffect(() => {
     if (activeSource) {
-      clearTimeout(autoCloseTimerRef.current);
+      if (autoCloseTimerRef.current) {
+        clearTimeout(autoCloseTimerRef.current);
+      }
       autoCloseTimerRef.current = setTimeout(() => {
         setActiveSource(null);
       }, AUTO_CLOSE_MS);
     } else {
-      clearTimeout(autoCloseTimerRef.current);
+      if (autoCloseTimerRef.current) {
+        clearTimeout(autoCloseTimerRef.current);
+      }
     }
 
-    return () => clearTimeout(autoCloseTimerRef.current);
+    return () => {
+      if (autoCloseTimerRef.current) {
+        clearTimeout(autoCloseTimerRef.current);
+      }
+    };
   }, [activeSource]);
 
   const activeData = dataSources.find((ds) => ds.id === activeSource);
