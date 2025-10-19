@@ -253,10 +253,10 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-8">
                 <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
-                    UK Fishing Effort Monitoring - 2023
+                    Tromsø & UK Fishing Effort Monitoring - 2023
                 </h2>
                 <p class="text-lg text-gray-600">
-                    Real-time fishing activity data showing vessel locations, fishing hours, and effort intensity
+                    Real-time fishing activity data showing vessel locations, fishing hours, and effort intensity across North European waters
                 </p>
             </div>
             
@@ -314,10 +314,10 @@
             <!-- Section Header -->
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
-                    UK Fishing Effort Analytics - 2023
+                    Tromsø & UK Fishing Effort Analytics - 2023
                 </h2>
                 <p class="text-lg text-gray-600">
-                    Analyze fishing activity patterns, vessel distribution, and effort intensity across UK waters
+                    Analyze fishing activity patterns, vessel distribution, and effort intensity across North European waters
                 </p>
             </div>
 
@@ -327,8 +327,9 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Select Region
                     </label>
-                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="UK" selected>UK Waters</option>
+                    <select id="region-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="All Regions" selected>All Regions</option>
+                        <option value="UK">UK Waters</option>
                         <option value="Tromso">Tromsø Area</option>
                     </select>
                 </div>
@@ -337,9 +338,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Select Year
                     </label>
-                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
+                    <select id="year-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="2023" selected>2023</option>
                     </select>
                 </div>
@@ -348,20 +347,8 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Select Month
                     </label>
-                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <select id="month-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="All Months" selected>All Months</option>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
                     </select>
                 </div>
 
@@ -369,13 +356,8 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Select Vessel ID
                     </label>
-                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <select id="vessel-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="All Vessels" selected>All Vessels</option>
-                        <option value="V001">Vessel V001</option>
-                        <option value="V002">Vessel V002</option>
-                        <option value="V003">Vessel V003</option>
-                        <option value="V004">Vessel V004</option>
-                        <option value="V005">Vessel V005</option>
                     </select>
                 </div>
 
@@ -383,31 +365,33 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Select Analysis Type
                     </label>
-                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <select id="analysis-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="Fishing Hours" selected>Fishing Hours</option>
                         <option value="Vessel Activity">Vessel Activity</option>
                         <option value="Effort Intensity">Effort Intensity</option>
                         <option value="Spatial Distribution">Spatial Distribution</option>
                     </select>
                 </div>
+                
+                <!-- Debug button -->
+                <div class="w-48">
+                    <button onclick="testPopulation()" class="w-full px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                        Test Population
+                    </button>
+                </div>
 
                 <div class="w-48">
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Select Station
                     </label>
-                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="" selected>All Sampling Locations</option>
-                        <option value="Fishing Zone 55.5°N, -3.0°">Fishing Zone 55.5°N, -3.0°</option>
-                        <option value="Fishing Zone 56.0°N, -2.5°">Fishing Zone 56.0°N, -2.5°</option>
-                        <option value="Fishing Zone 54.5°N, -3.5°">Fishing Zone 54.5°N, -3.5°</option>
-                        <option value="Fishing Zone 55.8°N, -2.8°">Fishing Zone 55.8°N, -2.8°</option>
-                        <option value="Fishing Zone 56.2°N, -2.2°">Fishing Zone 56.2°N, -2.2°</option>
+                    <select id="station-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="All Stations" selected>All Sampling Locations</option>
                     </select>
                 </div>
             </div>
 
             <!-- Fishing Effort Analysis -->
-            <div>
+            <div id="fishing-effort-analysis">
                 <div class="mb-6">
                     <h3 class="text-2xl font-extrabold text-gray-900 mb-4">
                         Fishing Effort Analysis
@@ -470,6 +454,7 @@
                 <!-- Seasonal Data Cards -->
                 <div class="mb-12">
                     <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Seasonal Fishing Patterns</h3>
+                    <div id="seasonal-patterns">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <!-- Spring Card -->
                         <div class="card hover:shadow-xl transition-shadow">
@@ -579,6 +564,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -616,45 +602,642 @@
         // Initialize Lucide icons
         lucide.createIcons();
         
-        // Initialize map
-        const map = L.map('map').setView([55.0, -3.0], 6);
+        // Wait for DOM to be ready before initializing map
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing map...');
+            
+            // Check if Leaflet is loaded
+            if (typeof L === 'undefined') {
+                console.error('Leaflet is not loaded!');
+                return;
+            }
+            
+            // Check if map div exists
+            const mapDiv = document.getElementById('map');
+            if (!mapDiv) {
+                console.error('Map div not found!');
+                return;
+            }
+            
+            console.log('Initializing map...');
+            // Initialize map with a view that covers both UK southwest and Tromsø regions
+            const map = L.map('map').setView([62.0, 5.0], 3);
         
+            console.log('Adding tile layer...');
         // Add tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
         
-        // Sample fishing data points (you can replace with real data)
-        const fishingData = [
-            { lat: 55.5, lng: -3.0, hours: 120, vessels: 3, intensity: 'High' },
-            { lat: 56.0, lng: -2.5, hours: 85, vessels: 2, intensity: 'Medium' },
-            { lat: 54.5, lng: -3.5, hours: 200, vessels: 5, intensity: 'Very High' },
-            { lat: 55.8, lng: -2.8, hours: 60, vessels: 1, intensity: 'Low' },
-            { lat: 56.2, lng: -2.2, hours: 150, vessels: 4, intensity: 'High' }
-        ];
+            // Make map globally available
+            window.map = map;
+            console.log('Map initialized successfully!');
+            
+            // Load fishing data when DOM is ready
+            loadFishingData();
+        });
         
-        // Add markers for fishing locations
-        fishingData.forEach(point => {
-            const marker = L.circleMarker([point.lat, point.lng], {
-                radius: Math.max(8, point.hours / 20),
-                fillColor: point.intensity === 'Very High' ? '#dc2626' : 
-                          point.intensity === 'High' ? '#ea580c' :
-                          point.intensity === 'Medium' ? '#d97706' : '#65a30d',
+        // Load fishing data from JSON files
+        let allFishingData = [];
+        let currentMarkers = [];
+        let filteredData = [];
+        
+        // Function to determine fishing intensity based on hours
+        function getFishingIntensity(hours) {
+            if (hours > 200) return 'Very High';
+            if (hours > 100) return 'High';
+            if (hours > 50) return 'Medium';
+            return 'Low';
+        }
+        
+        // Function to get color based on intensity
+        function getIntensityColor(intensity) {
+            switch(intensity) {
+                case 'Very High': return '#dc2626';
+                case 'High': return '#ea580c';
+                case 'Medium': return '#d97706';
+                case 'Low': return '#65a30d';
+                default: return '#6b7280';
+            }
+        }
+        
+        // Function to load and process fishing data
+        async function loadFishingData() {
+            try {
+                console.log('Loading fishing data...');
+                
+                // Load UK data for all years
+                const uk2021Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2021MONTHLY.json');
+                const uk2021Data = await uk2021Response.json();
+                console.log('UK 2021 data loaded:', uk2021Data.length, 'records');
+                
+                const uk2022Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2022MONTHLY.json');
+                const uk2022Data = await uk2022Response.json();
+                console.log('UK 2022 data loaded:', uk2022Data.length, 'records');
+                
+                const uk2023Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2023MONTHLY.json');
+                const uk2023Data = await uk2023Response.json();
+                console.log('UK 2023 data loaded:', uk2023Data.length, 'records');
+                
+                // Load Tromsø data for all years
+                const tromso2021Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2021MONTHLY.json');
+                const tromso2021Data = await tromso2021Response.json();
+                console.log('Tromsø 2021 data loaded:', tromso2021Data.length, 'records');
+                
+                const tromso2022Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2022MONTHLY.json');
+                const tromso2022Data = await tromso2022Response.json();
+                console.log('Tromsø 2022 data loaded:', tromso2022Data.length, 'records');
+                
+                const tromso2023Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2023MONTHLY.json');
+                const tromso2023Data = await tromso2023Response.json();
+                console.log('Tromsø 2023 data loaded:', tromso2023Data.length, 'records');
+                
+                // Combine all data from all years
+                allFishingData = [...uk2021Data, ...uk2022Data, ...uk2023Data, ...tromso2021Data, ...tromso2022Data, ...tromso2023Data];
+                
+                console.log(`Loaded ${allFishingData.length} fishing data points`);
+                
+                // Populate all selectors with actual data
+                console.log('Starting to populate selectors...');
+                console.log('Data sample:', allFishingData[0]);
+                
+                // Add a small delay to ensure DOM is ready
+                setTimeout(() => {
+                    console.log('About to populate selectors...');
+                    console.log('Vessel selector element:', document.getElementById('vessel-selector'));
+                    console.log('Year selector element:', document.getElementById('year-selector'));
+                    
+                    populateVesselSelector();
+                    populateYearSelector();
+                    populateMonthSelector();
+                    populateStationSelector();
+                    console.log('Finished populating selectors');
+                }, 100);
+                
+                // Initialize with all data (will be filtered by selectors)
+                filteredData = [...allFishingData];
+                updateMapWithFilteredData();
+                
+            } catch (error) {
+                console.error('Error loading fishing data:', error);
+                // Fallback to sample data if JSON loading fails
+                const sampleData = [
+                    { Lat: 55.5, Lon: -3.0, 'Apparent Fishing Hours': 120, 'Vessel IDs': 3, 'Time Range': '2023-01' },
+                    { Lat: 56.0, Lon: -2.5, 'Apparent Fishing Hours': 85, 'Vessel IDs': 2, 'Time Range': '2023-02' },
+                    { Lat: 54.5, Lon: -3.5, 'Apparent Fishing Hours': 200, 'Vessel IDs': 5, 'Time Range': '2023-03' }
+                ];
+                
+                sampleData.forEach(point => {
+                    const intensity = getFishingIntensity(point['Apparent Fishing Hours']);
+                    const color = getIntensityColor(intensity);
+                    
+                    const marker = L.circleMarker([point.Lat, point.Lon], {
+                        radius: Math.max(8, Math.min(20, point['Apparent Fishing Hours'] / 5)),
+                        fillColor: color,
                 color: '#fff',
                 weight: 2,
                 opacity: 1,
                 fillOpacity: 0.8
-            }).addTo(map);
+                    }).addTo(window.map);
+                    
+                    marker.bindPopup(`
+                        <div class="p-2">
+                            <h3 class="font-bold text-lg mb-2">Fishing Zone (Sample Data)</h3>
+                            <p><strong>Fishing Hours:</strong> ${point['Apparent Fishing Hours']} hrs</p>
+                            <p><strong>Vessel ID:</strong> ${point['Vessel IDs']}</p>
+                            <p><strong>Intensity:</strong> ${intensity}</p>
+                            <p><strong>Time Period:</strong> ${point['Time Range']}</p>
+                            <p><strong>Coordinates:</strong> ${point.Lat.toFixed(2)}°N, ${point.Lon.toFixed(2)}°</p>
+                        </div>
+                    `);
+                });
+            }
+        }
+        
+        // Function to populate vessel selector with actual vessel IDs
+        function populateVesselSelector() {
+            console.log('Populating vessel selector...');
+            const vesselSelector = document.getElementById('vessel-selector');
+            if (!vesselSelector) {
+                console.error('Vessel selector not found!');
+                return;
+            }
+            
+            console.log('All fishing data length:', allFishingData.length);
+            console.log('Sample data point:', allFishingData[0]);
+            
+            // Get unique vessel IDs from the data
+            const vesselIds = [...new Set(allFishingData.map(point => {
+                console.log('Processing vessel ID:', point['Vessel IDs'], 'from point:', point);
+                return point['Vessel IDs'];
+            }))].sort((a, b) => a - b);
+            console.log('Found vessel IDs:', vesselIds);
+            
+            // Clear existing options except "All Vessels"
+            vesselSelector.innerHTML = '<option value="All Vessels" selected>All Vessels</option>';
+            
+            // Add actual vessel IDs
+            vesselIds.forEach(vesselId => {
+                console.log('Adding vessel option:', vesselId);
+                const option = document.createElement('option');
+                option.value = vesselId.toString();
+                option.textContent = `Vessel ${vesselId}`;
+                vesselSelector.appendChild(option);
+            });
+            
+            console.log('Vessel selector populated with', vesselIds.length, 'vessels');
+            console.log('Final vessel selector options:', vesselSelector.innerHTML);
+        }
+        
+        // Function to populate year selector with available years
+        function populateYearSelector() {
+            console.log('Populating year selector...');
+            const yearSelector = document.getElementById('year-selector');
+            if (!yearSelector) {
+                console.error('Year selector not found!');
+                return;
+            }
+            
+            console.log('All fishing data length:', allFishingData.length);
+            console.log('Sample time ranges:', allFishingData.slice(0, 5).map(p => p['Time Range']));
+            
+            // Extract years from Time Range field
+            const years = [...new Set(allFishingData.map(point => {
+                const timeRange = point['Time Range'];
+                return timeRange.split('-')[0]; // Extract year from "2023-09" format
+            }))].sort();
+            
+            console.log('Found years:', years);
+            
+            // Clear existing options
+            yearSelector.innerHTML = '';
+            
+            // Add year options
+            years.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                if (year === '2023') option.selected = true; // Default to 2023
+                yearSelector.appendChild(option);
+            });
+            
+            console.log('Year selector populated with', years.length, 'years');
+        }
+        
+        // Function to populate month selector with available months
+        function populateMonthSelector() {
+            console.log('Populating month selector...');
+            const monthSelector = document.getElementById('month-selector');
+            if (!monthSelector) {
+                console.error('Month selector not found!');
+                return;
+            }
+            
+            console.log('All fishing data length:', allFishingData.length);
+            console.log('Sample time ranges:', allFishingData.slice(0, 5).map(p => p['Time Range']));
+            
+            // Extract months from Time Range field
+            const months = [...new Set(allFishingData.map(point => {
+                const timeRange = point['Time Range'];
+                return parseInt(timeRange.split('-')[1]); // Extract month from "2023-09" format
+            }))].sort((a, b) => a - b);
+            
+            console.log('Found months:', months);
+            
+            // Clear existing options
+            monthSelector.innerHTML = '<option value="All Months" selected>All Months</option>';
+            
+            // Month names mapping
+            const monthNames = {
+                1: 'January', 2: 'February', 3: 'March', 4: 'April',
+                5: 'May', 6: 'June', 7: 'July', 8: 'August',
+                9: 'September', 10: 'October', 11: 'November', 12: 'December'
+            };
+            
+            // Add month options
+            months.forEach(month => {
+                const option = document.createElement('option');
+                option.value = month;
+                option.textContent = monthNames[month] || `Month ${month}`;
+                monthSelector.appendChild(option);
+            });
+            
+            console.log('Month selector populated with', months.length, 'months');
+        }
+        
+        // Function to populate station selector with actual coordinates
+        function populateStationSelector() {
+            console.log('Populating station selector...');
+            const stationSelector = document.getElementById('station-selector');
+            if (!stationSelector) {
+                console.error('Station selector not found!');
+                return;
+            }
+            
+            console.log('All fishing data length:', allFishingData.length);
+            
+            // Get unique coordinate combinations from the data
+            const stations = [...new Set(allFishingData.map(point => {
+                return `${point.Lat.toFixed(1)}°N, ${point.Lon.toFixed(1)}°`;
+            }))].sort();
+            
+            console.log('Found stations:', stations);
+            
+            // Clear existing options except "All Stations"
+            stationSelector.innerHTML = '<option value="All Stations" selected>All Sampling Locations</option>';
+            
+            // Add actual station coordinates
+            stations.forEach(station => {
+                const option = document.createElement('option');
+                option.value = station;
+                option.textContent = `Fishing Zone ${station}`;
+                stationSelector.appendChild(option);
+            });
+            
+            console.log('Station selector populated with', stations.length, 'stations');
+        }
+        
+        // Test function to manually trigger population
+        function testPopulation() {
+            console.log('Manual test triggered!');
+            console.log('All fishing data length:', allFishingData.length);
+            console.log('Sample data:', allFishingData[0]);
+            
+            populateVesselSelector();
+            populateYearSelector();
+            populateMonthSelector();
+            populateStationSelector();
+        }
+        
+        // Function to filter data based on selectors
+        function filterData() {
+            const region = document.getElementById('region-selector').value;
+            const year = document.getElementById('year-selector').value;
+            const month = document.getElementById('month-selector').value;
+            const vessel = document.getElementById('vessel-selector').value;
+            const station = document.getElementById('station-selector').value;
+            
+            // Filter the data based on selections
+            filteredData = allFishingData.filter(point => {
+                // Region filter (based on coordinates)
+                let regionMatch = true;
+                if (region === 'UK') {
+                    regionMatch = point.Lat >= 49 && point.Lat <= 61 && point.Lon >= -8 && point.Lon <= 2;
+                } else if (region === 'Tromso') {
+                    regionMatch = point.Lat >= 68 && point.Lat <= 71 && point.Lon >= 15 && point.Lon <= 25;
+                }
+                
+                // Year filter (from Time Range)
+                const yearMatch = point['Time Range'].startsWith(year);
+                
+                // Month filter
+                let monthMatch = true;
+                if (month !== 'All Months') {
+                    const monthNumber = month.padStart(2, '0');
+                    monthMatch = point['Time Range'].includes(`-${monthNumber}`);
+                }
+                
+                // Vessel filter
+                let vesselMatch = true;
+                if (vessel !== 'All Vessels') {
+                    vesselMatch = point['Vessel IDs'].toString() === vessel;
+                }
+                
+                // Station filter
+                let stationMatch = true;
+                if (station !== 'All Stations') {
+                    const pointStation = `${point.Lat.toFixed(1)}°N, ${point.Lon.toFixed(1)}°`;
+                    stationMatch = pointStation === station;
+                }
+                
+                return regionMatch && yearMatch && monthMatch && vesselMatch && stationMatch;
+            });
+            
+            // Update map with filtered data
+            updateMapWithFilteredData();
+        }
+        
+        // Function to update map with filtered data
+        function updateMapWithFilteredData() {
+            // Clear existing markers
+            currentMarkers.forEach(marker => window.map.removeLayer(marker));
+            currentMarkers = [];
+            
+            // Add new markers based on filtered data
+            filteredData.forEach(point => {
+                const intensity = getFishingIntensity(point['Apparent Fishing Hours']);
+                const color = getIntensityColor(intensity);
+                
+                const marker = L.circleMarker([point.Lat, point.Lon], {
+                    radius: Math.max(8, Math.min(20, point['Apparent Fishing Hours'] / 5)),
+                    fillColor: color,
+                color: '#fff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+                }).addTo(window.map);
             
             marker.bindPopup(`
                 <div class="p-2">
                     <h3 class="font-bold text-lg mb-2">Fishing Zone</h3>
-                    <p><strong>Fishing Hours:</strong> ${point.hours} hrs</p>
-                    <p><strong>Vessels:</strong> ${point.vessels}</p>
-                    <p><strong>Intensity:</strong> ${point.intensity}</p>
-                    <p><strong>Coordinates:</strong> ${point.lat.toFixed(2)}°N, ${point.lng.toFixed(2)}°</p>
+                        <p><strong>Fishing Hours:</strong> ${point['Apparent Fishing Hours'].toFixed(1)} hrs</p>
+                        <p><strong>Vessel ID:</strong> ${point['Vessel IDs']}</p>
+                        <p><strong>Intensity:</strong> ${intensity}</p>
+                        <p><strong>Time Period:</strong> ${point['Time Range']}</p>
+                        <p><strong>Coordinates:</strong> ${point.Lat.toFixed(2)}°N, ${point.Lon.toFixed(2)}°</p>
                 </div>
             `);
+                
+                currentMarkers.push(marker);
+            });
+            
+            // Update statistics display
+            updateStatistics();
+            updateFishingEffortAnalysis();
+            updateSeasonalPatterns();
+        }
+        
+        // Function to update statistics display
+        function updateStatistics() {
+            const totalPoints = filteredData.length;
+            const totalHours = filteredData.reduce((sum, point) => sum + point['Apparent Fishing Hours'], 0);
+            const avgHours = totalPoints > 0 ? totalHours / totalPoints : 0;
+            const uniqueVessels = new Set(filteredData.map(point => point['Vessel IDs'])).size;
+            
+            // Update or create statistics display
+            let statsDiv = document.getElementById('stats-display');
+            if (!statsDiv) {
+                statsDiv = document.createElement('div');
+                statsDiv.id = 'stats-display';
+                statsDiv.className = 'mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200';
+                document.getElementById('data-section').appendChild(statsDiv);
+            }
+            
+            statsDiv.innerHTML = `
+                <h3 class="text-xl font-bold text-blue-900 mb-4">Current Analysis Statistics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">${totalPoints}</div>
+                        <div class="text-sm text-blue-800">Data Points</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">${totalHours.toFixed(1)}</div>
+                        <div class="text-sm text-blue-800">Total Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">${avgHours.toFixed(1)}</div>
+                        <div class="text-sm text-blue-800">Avg Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">${uniqueVessels}</div>
+                        <div class="text-sm text-blue-800">Unique Vessels</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Function to update Fishing Effort Analysis section
+        function updateFishingEffortAnalysis() {
+            const totalPoints = filteredData.length;
+            const totalHours = filteredData.reduce((sum, point) => sum + point['Apparent Fishing Hours'], 0);
+            const avgHours = totalPoints > 0 ? totalHours / totalPoints : 0;
+            const uniqueVessels = new Set(filteredData.map(point => point['Vessel IDs'])).size;
+            
+            // Calculate region distribution
+            const ukPoints = filteredData.filter(point => point.Lat >= 49 && point.Lat <= 61 && point.Lon >= -8 && point.Lon <= 2).length;
+            const tromsoPoints = filteredData.filter(point => point.Lat >= 68 && point.Lat <= 71 && point.Lon >= 15 && point.Lon <= 25).length;
+            
+            // Calculate intensity distribution
+            const intensityCounts = {
+                'Low': filteredData.filter(point => point['Apparent Fishing Hours'] <= 50).length,
+                'Medium': filteredData.filter(point => point['Apparent Fishing Hours'] > 50 && point['Apparent Fishing Hours'] <= 100).length,
+                'High': filteredData.filter(point => point['Apparent Fishing Hours'] > 100 && point['Apparent Fishing Hours'] <= 200).length,
+                'Very High': filteredData.filter(point => point['Apparent Fishing Hours'] > 200).length
+            };
+            
+            const fishingEffortDiv = document.getElementById('fishing-effort-analysis');
+            if (fishingEffortDiv) {
+                fishingEffortDiv.innerHTML = `
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-extrabold text-gray-900 mb-4">
+                            Fishing Effort Analysis
+                        </h3>
+                        
+                        <!-- Analysis Info Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+                            <!-- Region Card -->
+                            <div class="card hover:shadow-xl transition-shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title text-sm text-indigo-600 font-medium">Study Region</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="text-2xl font-bold text-gray-900">${ukPoints + tromsoPoints}</div>
+                                    <div class="text-sm text-gray-600">Total Locations</div>
+                                    <div class="mt-2 text-xs text-gray-500">
+                                        UK: ${ukPoints} | Tromsø: ${tromsoPoints}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Data Points Card -->
+                            <div class="card hover:shadow-xl transition-shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title text-sm text-indigo-600 font-medium">Data Points</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="text-2xl font-bold text-gray-900">${totalPoints}</div>
+                                    <div class="text-sm text-gray-600">Total Records</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Fishing Hours Card -->
+                            <div class="card hover:shadow-xl transition-shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title text-sm text-indigo-600 font-medium">Fishing Hours</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="text-2xl font-bold text-gray-900">${totalHours.toFixed(0)}</div>
+                                    <div class="text-sm text-gray-600">Total Hours</div>
+                                    <div class="mt-1 text-xs text-gray-500">Avg: ${avgHours.toFixed(1)} hrs</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Vessels Card -->
+                            <div class="card hover:shadow-xl transition-shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title text-sm text-indigo-600 font-medium">Vessels</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="text-2xl font-bold text-gray-900">${uniqueVessels}</div>
+                                    <div class="text-sm text-gray-600">Active Vessels</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Intensity Card -->
+                            <div class="card hover:shadow-xl transition-shadow">
+                                <div class="card-header">
+                                    <h4 class="card-title text-sm text-indigo-600 font-medium">Intensity</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="text-sm text-gray-600 mb-1">Distribution:</div>
+                                    <div class="text-xs text-gray-500">
+                                        Low: ${intensityCounts.Low}<br>
+                                        Med: ${intensityCounts.Medium}<br>
+                                        High: ${intensityCounts.High}<br>
+                                        V.High: ${intensityCounts['Very High']}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Function to update Seasonal Fishing Patterns section
+        function updateSeasonalPatterns() {
+            // Group data by season based on month
+            const seasonalData = {
+                'Spring': filteredData.filter(point => {
+                    const month = parseInt(point['Time Range'].split('-')[1]);
+                    return month >= 3 && month <= 5;
+                }),
+                'Summer': filteredData.filter(point => {
+                    const month = parseInt(point['Time Range'].split('-')[1]);
+                    return month >= 6 && month <= 8;
+                }),
+                'Autumn': filteredData.filter(point => {
+                    const month = parseInt(point['Time Range'].split('-')[1]);
+                    return month >= 9 && month <= 11;
+                }),
+                'Winter': filteredData.filter(point => {
+                    const month = parseInt(point['Time Range'].split('-')[1]);
+                    return month === 12 || month <= 2;
+                })
+            };
+            
+            const seasonalDiv = document.getElementById('seasonal-patterns');
+            if (seasonalDiv) {
+                seasonalDiv.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        ${Object.entries(seasonalData).map(([season, data]) => {
+                            const totalHours = data.reduce((sum, point) => sum + point['Apparent Fishing Hours'], 0);
+                            const avgHours = data.length > 0 ? totalHours / data.length : 0;
+                            const uniqueVessels = new Set(data.map(point => point['Vessel IDs'])).size;
+                            const avgVessels = data.length > 0 ? uniqueVessels / data.length : 0;
+                            
+                            const icons = {
+                                'Spring': '🌱',
+                                'Summer': '☀️',
+                                'Autumn': '🍂',
+                                'Winter': '❄️'
+                            };
+                            
+                            const colors = {
+                                'Spring': 'text-green-600',
+                                'Summer': 'text-yellow-600',
+                                'Autumn': 'text-orange-600',
+                                'Winter': 'text-gray-600'
+                            };
+                            
+                            return `
+                                <div class="card hover:shadow-xl transition-shadow">
+                                    <div class="card-header">
+                                        <h4 class="card-title flex items-center justify-between">
+                                            <span>${season} ${icons[season]}</span>
+                                            <span class="text-2xl ${colors[season]}">${data.length > 0 ? '↑' : '→'}</span>
+                                        </h4>
+                                    </div>
+                                    <div class="card-content space-y-3">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Data Points:</span>
+                                            <span class="font-semibold">${data.length}</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Total Hours:</span>
+                                            <span class="font-semibold">${totalHours.toFixed(0)} hrs</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Avg Hours:</span>
+                                            <span class="font-semibold">${avgHours.toFixed(1)} hrs</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Vessels:</span>
+                                            <span class="font-semibold">${uniqueVessels}</span>
+                                        </div>
+                                        <div class="mt-4 pt-3 border-t">
+                                            <div class="text-sm text-gray-500">Analysis: ${season} Activity</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            }
+        }
+        
+        // Add event listeners to selectors
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for data to load, then set up event listeners
+            setTimeout(() => {
+                const regionSelector = document.getElementById('region-selector');
+                const yearSelector = document.getElementById('year-selector');
+                const monthSelector = document.getElementById('month-selector');
+                const vesselSelector = document.getElementById('vessel-selector');
+                const stationSelector = document.getElementById('station-selector');
+                const analysisSelector = document.getElementById('analysis-selector');
+                
+                if (regionSelector) regionSelector.addEventListener('change', filterData);
+                if (yearSelector) yearSelector.addEventListener('change', filterData);
+                if (monthSelector) monthSelector.addEventListener('change', filterData);
+                if (vesselSelector) vesselSelector.addEventListener('change', filterData);
+                if (stationSelector) stationSelector.addEventListener('change', filterData);
+                if (analysisSelector) analysisSelector.addEventListener('change', filterData);
+                
+                // Initial filter
+                filterData();
+            }, 2000);
         });
         
         // Toggle details function
