@@ -668,28 +668,28 @@
                 console.log('Loading fishing data...');
                 
                 // Load UK data for all years
-                const uk2021Response = await fetch('./src/data/vertebrates/uk/fishingeffort_UK2021MONTHLY.json');
+                const uk2021Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2021MONTHLY.json');
                 const uk2021Data = await uk2021Response.json();
                 console.log('UK 2021 data loaded:', uk2021Data.length, 'records');
                 
-                const uk2022Response = await fetch('./src/data/vertebrates/uk/fishingeffort_UK2022MONTHLY.json');
+                const uk2022Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2022MONTHLY.json');
                 const uk2022Data = await uk2022Response.json();
                 console.log('UK 2022 data loaded:', uk2022Data.length, 'records');
                 
-                const uk2023Response = await fetch('./src/data/vertebrates/uk/fishingeffort_UK2023MONTHLY.json');
+                const uk2023Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2023MONTHLY.json');
                 const uk2023Data = await uk2023Response.json();
                 console.log('UK 2023 data loaded:', uk2023Data.length, 'records');
                 
                 // Load Tromsø data for all years
-                const tromso2021Response = await fetch('./src/data/vertebrates/tromso/fishingeffort_Tromso2021MONTHLY.json');
+                const tromso2021Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2021MONTHLY.json');
                 const tromso2021Data = await tromso2021Response.json();
                 console.log('Tromsø 2021 data loaded:', tromso2021Data.length, 'records');
                 
-                const tromso2022Response = await fetch('./src/data/vertebrates/tromso/fishingeffort_Tromso2022MONTHLY.json');
+                const tromso2022Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2022MONTHLY.json');
                 const tromso2022Data = await tromso2022Response.json();
                 console.log('Tromsø 2022 data loaded:', tromso2022Data.length, 'records');
                 
-                const tromso2023Response = await fetch('./src/data/vertebrates/tromso/fishingeffort_Tromso2023MONTHLY.json');
+                const tromso2023Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2023MONTHLY.json');
                 const tromso2023Data = await tromso2023Response.json();
                 console.log('Tromsø 2023 data loaded:', tromso2023Data.length, 'records');
                 
