@@ -442,6 +442,32 @@
             margin: 0;
         }
         
+        .env-item .location {
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 1rem !important;
+        }
+        
+        .env-item .description {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .env-item .description h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .env-item .description p {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
         .species-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -855,12 +881,20 @@
                     <div class="env-item">
                         <img src="./data/salinityPlymouth.jpg" alt="Salinity - Plymouth, UK" onclick="openModal('./data/salinityPlymouth.jpg', 'Salinity Analysis - Plymouth, UK')" />
                         <h4>Salinity</h4>
-                        <p>Plymouth, UK</p>
+                        <p class="location">Plymouth, UK</p>
+                        <div class="description">
+                            <h5>Overall salinity variation 2021 to 2023</h5>
+                            <p>This line graph shows the monthly variation in salinity (in PSU) over a year. Salinity decreases from January to June, reaching its lowest in mid-year, and then gradually increases from July to December, indicating seasonal changes in salt concentration.</p>
+                        </div>
                     </div>
                     <div class="env-item">
                         <img src="./data/temperaturePlymouth.png" alt="Temperature - Plymouth, UK" onclick="openModal('./data/temperaturePlymouth.png', 'Temperature Analysis - Plymouth, UK')" />
                         <h4>Temperature</h4>
-                        <p>Plymouth, UK</p>
+                        <p class="location">Plymouth, UK</p>
+                        <div class="description">
+                            <h5>Overall temperature variation 2021 to 2023</h5>
+                            <p>This line graph illustrates monthly temperature (°C) changes over the year. Temperature is lowest in the early months (Jan–Mar), rises steadily to a peak in late summer (Aug–Sep), and then decreases toward the end of the year.</p>
+                        </div>
                     </div>
                 `;
             } else {
