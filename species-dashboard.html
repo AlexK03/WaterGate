@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Gate - Species Data Dashboard</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <title>sEaDNA - Species Data Dashboard</title>
     
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -242,14 +243,14 @@
     <!-- Hero Section -->
     <div class="hero-section">
         <video class="hero-video" autoplay muted loop>
-            <source src="/background.mp4" type="video/mp4">
+            <source src="./background.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         
         <div class="hero-content min-h-screen w-full flex items-center justify-center overflow-hidden">
             <div class="relative z-10 text-center px-4">
                 <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6 leading-tight">
-                    Water Gate
+                    sEaDNA
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
                     Species Data Dashboard
@@ -263,7 +264,7 @@
         <!-- Navigation Buttons -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4">
             <button
-                onclick="window.location.href='/'"
+                onclick="window.location.href='./index.html'"
                 class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
                 aria-label="Back to main page"
             >
@@ -272,7 +273,7 @@
             </button>
             
             <button
-                onclick="window.location.href='/map-page.html'"
+                onclick="window.location.href='./map-page.html'"
                 class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
                 aria-label="Navigate to map page"
             >
@@ -297,7 +298,7 @@
             <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
                 <div class="absolute top-4 right-4 z-10">
                     <button
-                        onclick="window.location.href='/'"
+                        onclick="window.location.href='./index.html'"
                         class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                     >
                         <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -342,7 +343,7 @@
 
                     <!-- Species Description -->
                     <div class="species-card">
-                        <img src="/src/data/graphs/Clupea%20harengus.jpeg" alt="Atlantic herring" class="species-image" onclick="openModal('/src/data/graphs/Clupea%20harengus.jpeg', 'Atlantic herring')" />
+                        <img src="./data/graphs/Clupea%20harengus.jpeg" alt="Atlantic herring" class="species-image" onclick="openModal('./data/graphs/Clupea%20harengus.jpeg', 'Atlantic herring')" />
                         <div class="species-info">
                             <h2>
                                 <em>Clupea harengus</em> (Atlantic herring)
@@ -354,11 +355,11 @@
                     <!-- Graphs -->
                     <div class="graph-grid">
                         <div class="graph-item">
-                            <img src="/src/data/graphs/AtlanticHerringUK.png" alt="Graph 1" />
+                            <img src="./data/graphs/AtlanticHerringUK.png" alt="Graph 1" />
                             <p>Southwest UK</p>
                         </div>
                         <div class="graph-item">
-                            <img src="/src/data/graphs/AtlanticHerringTromso.png" alt="Graph 2" />
+                            <img src="./data/graphs/AtlanticHerringTromso.png" alt="Graph 2" />
                             <p>Tromsø, Norway</p>
                         </div>
                     </div>
@@ -390,14 +391,14 @@
                         name: 'Clupea harengus',
                         commonName: 'Atlantic herring',
                         description: 'A species of herring found in the North Atlantic Ocean, important in commercial fisheries.',
-                        image: '/src/data/graphs/Clupea%20harengus.jpeg',
+                        image: './data/graphs/Clupea%20harengus.jpeg',
                         graphs: [
                             {
-                                image: '/src/data/graphs/AtlanticHerringUK.png',
+                                image: './data/graphs/AtlanticHerringUK.png',
                                 caption: 'Southwest UK',
                             },
                             {
-                                image: '/src/data/graphs/AtlanticHerringTromso.png',
+                                image: './data/graphs/AtlanticHerringTromso.png',
                                 caption: 'Tromsø, Norway',
                             },
                         ],
@@ -407,14 +408,14 @@
                         name: 'Oncorhynchus gorbuscha',
                         commonName: 'Pink salmon',
                         description: 'A species of salmon native to the Pacific Ocean, known for its distinctive pink coloration and migratory behavior.',
-                        image: '/src/data/graphs/Oncorhynchus%20gorbuscha.jpg',
+                        image: './data/graphs/Oncorhynchus%20gorbuscha.jpg',
                         graphs: [
                             {
-                                image: '/src/data/graphs/PinkSalmonUK.png',
+                                image: './data/graphs/PinkSalmonUK.png',
                                 caption: 'Southwest UK',
                             },
                             {
-                                image: '/src/data/graphs/PinkSalmonTromso.png',
+                                image: './data/graphs/PinkSalmonTromso.png',
                                 caption: 'Tromsø, Norway',
                             },
                         ],
@@ -424,14 +425,14 @@
                         name: 'Prionace glauca',
                         commonName: 'Blue shark',
                         description: 'A large pelagic shark species found in temperate and tropical waters worldwide, known for its distinctive blue coloration.',
-                        image: '/src/data/graphs/Prionance Glauca.jpg',
+                        image: './data/graphs/Prionance Glauca.jpg',
                         graphs: [
                             {
-                                image: '/src/data/graphs/BlueSharkUK.png',
+                                image: './data/graphs/BlueSharkUK.png',
                                 caption: 'Southwest UK',
                             },
                             {
-                                image: '/src/data/graphs/BlueSharkTromso.png',
+                                image: './data/graphs/BlueSharkTromso.png',
                                 caption: 'Tromsø, Norway',
                             },
                         ],
@@ -446,14 +447,14 @@
                         name: 'Micromonas pusilla',
                         commonName: 'Green tide algae',
                         description: 'A small, unicellular green alga belonging to the prasinophytes, commonly found in marine environments and known for its role in primary production and carbon cycling.',
-                        image: '/src/data/graphs/Micromonas%20pusilla.jpg',
+                        image: './data/graphs/Micromonas%20pusilla.jpg',
                         graphs: [
                             {
-                                image: '/src/data/graphs/MicromonasPusillaUK.png',
+                                image: './data/graphs/MicromonasPusillaUK.png',
                                 caption: 'Southwest UK',
                             },
                             {
-                                image: '/src/data/graphs/Micromonas pusillaTromso.png',
+                                image: './data/graphs/Micromonas pusillaTromso.png',
                                 caption: 'Tromsø, Norway',
                             },
                         ],
