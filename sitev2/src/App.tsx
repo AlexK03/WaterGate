@@ -80,13 +80,12 @@ export default function App() {
         {/* Content */}
         <div className="relative z-10 text-center px-4">
           <h1
-            className="text-[120px] text-white/90 leading-none font-extrabold"
-
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[120px] text-white/90 leading-none font-extrabold px-4"
           >
             sEaDNA
           </h1>
 
-          <p className="mt-8 text-xl text-white/90 tracking-wide drop-shadow-lg">
+          <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/90 tracking-wide drop-shadow-lg px-4 max-w-4xl mx-auto">
             Understanding the effect of human action on sea life using molecular and open data
           </p>
 
@@ -97,10 +96,10 @@ export default function App() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col sm:flex-row gap-3 sm:gap-4 px-4">
           <button
             onClick={() => window.location.href = './map-page.html'}
-            className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30"
+            className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 text-sm sm:text-base"
             style={{
               transition: 'all 0.3s ease'
             }}
@@ -117,12 +116,12 @@ export default function App() {
             aria-label="Navigate to map page"
           >
             <MapPin className="w-5 h-5" />
-            <span className="font-medium text-xl">View Map</span>
+            <span className="font-medium text-lg sm:text-xl">View Map</span>
           </button>
 
           <button
             onClick={() => window.location.href = './species-dashboard.html'}
-            className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30"
+            className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 text-sm sm:text-base"
             style={{
               transition: 'all 0.3s ease'
             }}
@@ -139,7 +138,7 @@ export default function App() {
             aria-label="Navigate to data page"
           >
             <BarChart3 className="w-5 h-5" />
-            <span className="font-medium text-xl">View Data</span>
+            <span className="font-medium text-lg sm:text-xl">View Data</span>
           </button>
         </div>
       </div>

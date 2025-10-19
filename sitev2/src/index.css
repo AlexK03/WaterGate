@@ -1818,6 +1818,20 @@ html {
     touch-action: manipulation;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
   }
+  
+  /* Ensure title fits on very small screens */
+  h1 {
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100vw;
+    overflow-wrap: break-word;
+  }
+  
+  /* Adjust spacing for mobile */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 /* iOS Safari specific fixes */
