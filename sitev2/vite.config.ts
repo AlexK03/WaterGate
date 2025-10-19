@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/sitev2/', // critical for GitHub Pages project sites
+  base: '/WaterGate/', // critical for GitHub Pages project sites
   server: {
     host: true,          // 0.0.0.0 — listen on all interfaces
     port: 5173,
