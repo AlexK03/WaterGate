@@ -18,7 +18,6 @@ const dataSources = [
       'A pan-European network providing open and standardized marine data, products, and services to support ocean research, policy development, and sustainable marine resource management.',
     links: [
       { label: 'Website', url: 'https://emodnet.ec.europa.eu' },
-      { label: 'Data Portal', url: 'https://portal.emodnet.eu' },
     ],
   },
   {
@@ -29,7 +28,6 @@ const dataSources = [
       'A collaborative European initiative integrating omics technologies into marine biodiversity observation, advancing research, monitoring, and data sharing across ocean ecosystems.',
     links: [
       { label: 'Website', url: 'https://www.embrc.eu/emo-bon/' },
-      { label: 'Data Portal', url: 'https://portal.emodnet.eu/biology' },
     ],
   },
   {
