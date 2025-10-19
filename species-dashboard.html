@@ -237,6 +237,232 @@
                 align-items: center;
             }
         }
+        
+        /* Regional Section Styles */
+        .regional-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .regional-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .regional-section p {
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        
+        .region-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .region-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            color: #64748b;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .region-button:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        .region-button.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .regional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .regional-item {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .regional-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .regional-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .regional-item img:hover {
+            transform: scale(1.02);
+        }
+        
+        .regional-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .regional-item p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin: 0;
+            text-align: left;
+        }
+        
+        @media (max-width: 768px) {
+            .regional-section {
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .region-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .region-button {
+                width: 100%;
+                max-width: 200px;
+                justify-content: center;
+            }
+            
+            .regional-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        
+        /* Environmental and Species Section Styles */
+        .environmental-section, .species-section {
+            margin-bottom: 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .section-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-header p {
+            color: #64748b;
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        .env-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .env-item {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .env-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .env-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .env-item img:hover {
+            transform: scale(1.02);
+        }
+        
+        .env-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .env-item p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .species-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .env-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .species-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .section-header h3 {
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -363,10 +589,30 @@
                             <p>Tromsø, Norway</p>
                         </div>
                     </div>
+
+                    <!-- Regional Comparison Section -->
+                    <div class="regional-section">
+                        <h2>Regional Data Comparison</h2>
+                        <p>Compare species abundance data between UK and Tromsø regions</p>
+                        
+                        <!-- Region Selector -->
+                        <div class="region-selector">
+                            <button class="region-button active" onclick="showRegion('uk')" data-region="uk">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                UK Waters
+                            </button>
+                            <button class="region-button" onclick="showRegion('tromso')" data-region="tromso">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                Tromsø Area
+                            </button>
+                        </div>
+
+                        <!-- Regional Images Grid -->
+                        <div class="regional-grid" id="regional-grid">
+                            <!-- Images will be populated by JavaScript -->
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Image Modal -->
     <div id="imageModal" class="image-modal" onclick="closeModal()">
@@ -482,6 +728,9 @@
             const firstSpecies = speciesData[category].species[0];
             currentSpeciesId = firstSpecies.id;
             showSpecies(firstSpecies.id);
+            
+            // Update regional grid
+            updateRegionalGrid();
         }
         
         function updateSpeciesSelector() {
@@ -547,6 +796,145 @@
             if (event.key === 'Escape') {
                 closeModal();
             }
+        });
+        
+        // Regional section functionality
+        let currentRegion = 'uk';
+        
+        function showRegion(region) {
+            currentRegion = region;
+            
+            // Update button states
+            document.querySelectorAll('.region-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-region="${region}"]`).classList.add('active');
+            
+            // Update regional grid
+            updateRegionalGrid();
+        }
+        
+        function updateRegionalGrid() {
+            const grid = document.getElementById('regional-grid');
+            const currentCategory = document.querySelector('.selector-button.active').textContent.trim().toLowerCase();
+            
+            // Clear existing content
+            grid.innerHTML = '';
+            
+            // Add environmental data section
+            addEnvironmentalData(grid);
+            
+            // Add species data section
+            addSpeciesData(grid, currentCategory);
+            
+            // Re-initialize Lucide icons for new content
+            lucide.createIcons();
+        }
+        
+        function addEnvironmentalData(grid) {
+            // Create environmental data section
+            const envSection = document.createElement('div');
+            envSection.className = 'environmental-section';
+            envSection.innerHTML = `
+                <div class="section-header">
+                    <h3>Environmental Conditions</h3>
+                    <p>Salinity and Temperature Analysis</p>
+                </div>
+                <div class="env-grid">
+                    ${getEnvironmentalImages()}
+                </div>
+            `;
+            grid.appendChild(envSection);
+        }
+        
+        function getEnvironmentalImages() {
+            let images = '';
+            
+            if (currentRegion === 'uk') {
+                images = `
+                    <div class="env-item">
+                        <img src="./data/salinityPlymouth.jpg" alt="Salinity - Plymouth, UK" onclick="openModal('./data/salinityPlymouth.jpg', 'Salinity Analysis - Plymouth, UK')" />
+                        <h4>Salinity</h4>
+                        <p>Plymouth, UK</p>
+                    </div>
+                    <div class="env-item">
+                        <img src="./data/temperaturePlymouth.png" alt="Temperature - Plymouth, UK" onclick="openModal('./data/temperaturePlymouth.png', 'Temperature Analysis - Plymouth, UK')" />
+                        <h4>Temperature</h4>
+                        <p>Plymouth, UK</p>
+                    </div>
+                `;
+            } else {
+                images = `
+                    <div class="env-item">
+                        <img src="./data/salinityTromso.png" alt="Salinity - Tromsø, Norway" onclick="openModal('./data/salinityTromso.png', 'Salinity Analysis - Tromsø, Norway')" />
+                        <h4>Salinity</h4>
+                        <p>Tromsø, Norway</p>
+                    </div>
+                    <div class="env-item">
+                        <img src="./data/temperatureTromso.png" alt="Temperature - Tromsø, Norway" onclick="openModal('./data/temperatureTromso.png', 'Temperature Analysis - Tromsø, Norway')" />
+                        <h4>Temperature</h4>
+                        <p>Tromsø, Norway</p>
+                    </div>
+                `;
+            }
+            
+            return images;
+        }
+        
+        function addSpeciesData(grid, currentCategory) {
+            // Get current species data
+            const categoryData = speciesData[currentCategory];
+            if (!categoryData) return;
+            
+            // Create species data section
+            const speciesSection = document.createElement('div');
+            speciesSection.className = 'species-section';
+            speciesSection.innerHTML = `
+                <div class="section-header">
+                    <h3>Species Abundance Data</h3>
+                    <p>${categoryData.title} Analysis</p>
+                </div>
+                <div class="species-grid">
+                    ${getSpeciesImages(categoryData)}
+                </div>
+            `;
+            grid.appendChild(speciesSection);
+        }
+        
+        function getSpeciesImages(categoryData) {
+            let images = '';
+            
+            // Filter images based on current region
+            categoryData.species.forEach(species => {
+                const regionImages = species.graphs.filter(graph => {
+                    if (currentRegion === 'uk') {
+                        return graph.caption.toLowerCase().includes('uk');
+                    } else {
+                        return graph.caption.toLowerCase().includes('tromsø') || graph.caption.toLowerCase().includes('tromso');
+                    }
+                });
+                
+                regionImages.forEach(graph => {
+                    images += `
+                        <div class="regional-item">
+                            <img src="${graph.image}" alt="${species.commonName} - ${graph.caption}" onclick="openModal('${graph.image}', '${species.commonName} - ${graph.caption}')" />
+                            <h3>${species.commonName}</h3>
+                            <p><em>${species.name}</em></p>
+                            <p>${graph.caption}</p>
+                        </div>
+                    `;
+                });
+            });
+            
+            return images;
+        }
+        
+        // Initialize regional grid on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for the page to fully load
+            setTimeout(() => {
+                updateRegionalGrid();
+            }, 100);
         });
     </script>
 </body>
