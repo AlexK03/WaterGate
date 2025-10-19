@@ -926,6 +926,7 @@
                 } else if (region === 'Tromso') {
                     regionMatch = point.Lat >= 68 && point.Lat <= 71 && point.Lon >= 15 && point.Lon <= 25;
                 }
+                // If region is 'All Regions', regionMatch remains true
                 
                 // Year filter (from Time Range)
                 const yearMatch = point['Time Range'].startsWith(year);
