@@ -98,7 +98,7 @@ export default function MissionSection() {
 
         {/* Additional stats or features section */}
         <motion.div
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="mt-20 mb-16 grid grid-cols-1 md:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
