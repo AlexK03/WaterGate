@@ -54,7 +54,7 @@ export default function App() {
         {/* Navigation Buttons */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4">
           <button
-            onClick={() => window.location.href = '/map-page.html'}
+            onClick={() => window.location.href = './map-page.html'}
             className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30"
             style={{
               transition: 'all 0.3s ease'
@@ -76,7 +76,7 @@ export default function App() {
           </button>
 
           <button
-            onClick={() => window.location.href = '/species-dashboard.html'}
+            onClick={() => window.location.href = './species-dashboard.html'}
             className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30"
             style={{
               transition: 'all 0.3s ease'

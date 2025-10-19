@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Gate - Interactive Map</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <title>sEaDNA - Interactive Map</title>
     
     <!-- Leaflet CSS for map functionality -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -208,14 +209,14 @@
     <!-- Hero Section -->
     <div class="hero-section">
         <video class="hero-video" autoplay muted loop>
-            <source src="/background.mp4" type="video/mp4">
+            <source src="./background.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         
         <div class="hero-content min-h-screen w-full flex items-center justify-center overflow-hidden">
             <div class="relative z-10 text-center px-4">
                 <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6 leading-tight">
-                    Water Gate
+                    sEaDNA
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
                     Advanced Marine Biodiversity Analytics Platform
@@ -229,7 +230,7 @@
         <!-- Navigation Buttons -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4">
             <button
-                onclick="window.location.href='/'"
+                onclick="window.location.href='./index.html'"
                 class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
                 aria-label="Back to main page"
             >
@@ -238,7 +239,7 @@
             </button>
             
                    <button
-                       onclick="window.location.href='/species-dashboard.html'"
+                       onclick="window.location.href='./species-dashboard.html'"
                        class="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white transition-all rounded-full border border-white/30 hover:bg-white/90 hover:text-[#022C4D] hover:border-white/80"
                        aria-label="Navigate to species dashboard"
                    >
@@ -263,7 +264,7 @@
             <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
                 <div class="absolute top-4 right-4 z-10">
                     <button
-                        onclick="window.location.href='/'"
+                        onclick="window.location.href='./index.html'"
                         class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                     >
                         <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -574,9 +575,9 @@
     <section class="data-sources-section">
         <div class="header-row">
             <div class="logo-row">
-                <img src="/logos/emodnet-logo.jpg" alt="EMODnet" class="logo" />
-                <img src="/logos/emo-bon-logo.png" alt="EMO BON" class="logo" />
-                <img src="/logos/marine-data-provider-logo.png" alt="Marine Data Provider" class="logo" />
+                <img src="./logos/emodnet-logo.jpg" alt="EMODnet" class="logo" />
+                <img src="./logos/emo-bon-logo.png" alt="EMO BON" class="logo" />
+                <img src="./logos/marine-data-provider-logo.png" alt="Marine Data Provider" class="logo" />
             </div>
             <div class="toggle-icon" onclick="toggleDetails()">
                 <i data-lucide="chevron-down" class="w-5 h-5"></i>
@@ -667,28 +668,28 @@
                 console.log('Loading fishing data...');
                 
                 // Load UK data for all years
-                const uk2021Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2021MONTHLY.json');
+                const uk2021Response = await fetch('./src/data/vertebrates/uk/fishingeffort_UK2021MONTHLY.json');
                 const uk2021Data = await uk2021Response.json();
                 console.log('UK 2021 data loaded:', uk2021Data.length, 'records');
                 
-                const uk2022Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2022MONTHLY.json');
+                const uk2022Response = await fetch('./src/data/vertebrates/uk/fishingeffort_UK2022MONTHLY.json');
                 const uk2022Data = await uk2022Response.json();
                 console.log('UK 2022 data loaded:', uk2022Data.length, 'records');
                 
-                const uk2023Response = await fetch('/src/data/vertebrates/uk/fishingeffort_UK2023MONTHLY.json');
+                const uk2023Response = await fetch('./src/data/vertebrates/uk/fishingeffort_UK2023MONTHLY.json');
                 const uk2023Data = await uk2023Response.json();
                 console.log('UK 2023 data loaded:', uk2023Data.length, 'records');
                 
                 // Load Tromsø data for all years
-                const tromso2021Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2021MONTHLY.json');
+                const tromso2021Response = await fetch('./src/data/vertebrates/tromso/fishingeffort_Tromso2021MONTHLY.json');
                 const tromso2021Data = await tromso2021Response.json();
                 console.log('Tromsø 2021 data loaded:', tromso2021Data.length, 'records');
                 
-                const tromso2022Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2022MONTHLY.json');
+                const tromso2022Response = await fetch('./src/data/vertebrates/tromso/fishingeffort_Tromso2022MONTHLY.json');
                 const tromso2022Data = await tromso2022Response.json();
                 console.log('Tromsø 2022 data loaded:', tromso2022Data.length, 'records');
                 
-                const tromso2023Response = await fetch('/src/data/vertebrates/tromso/fishingeffort_Tromso2023MONTHLY.json');
+                const tromso2023Response = await fetch('./src/data/vertebrates/tromso/fishingeffort_Tromso2023MONTHLY.json');
                 const tromso2023Data = await tromso2023Response.json();
                 console.log('Tromsø 2023 data loaded:', tromso2023Data.length, 'records');
                 
@@ -981,15 +982,15 @@
             marker.bindPopup(`
                 <div class="p-2">
                     <h3 class="font-bold text-lg mb-2">Fishing Zone</h3>
-                        <p><strong>Fishing Hours:</strong> ${point['Apparent Fishing Hours'].toFixed(1)} hrs</p>
-                        <p><strong>Vessel ID:</strong> ${point['Vessel IDs']}</p>
-                        <p><strong>Intensity:</strong> ${intensity}</p>
-                        <p><strong>Time Period:</strong> ${point['Time Range']}</p>
-                        <p><strong>Coordinates:</strong> ${point.Lat.toFixed(2)}°N, ${point.Lon.toFixed(2)}°</p>
+                    <p><strong>Fishing Hours:</strong> ${point['Apparent Fishing Hours'].toFixed(1)} hrs</p>
+                    <p><strong>Vessel ID:</strong> ${point['Vessel IDs']}</p>
+                    <p><strong>Intensity:</strong> ${intensity}</p>
+                    <p><strong>Time Period:</strong> ${point['Time Range']}</p>
+                    <p><strong>Coordinates:</strong> ${point.Lat.toFixed(2)}°N, ${point.Lon.toFixed(2)}°</p>
                 </div>
             `);
                 
-                currentMarkers.push(marker);
+            currentMarkers.push(marker);
             });
             
             // Update statistics display
