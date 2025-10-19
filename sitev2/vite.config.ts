@@ -10,7 +10,7 @@ export default defineConfig({
     strictPort: true,
     // HMR websocket must point to your LAN IP so phones/tablets can connect
     hmr: {
-      host: process.env.VITE_HOST || '172.22.152.68', // replace with your LAN IP if needed
+      host: process.env.VITE_HOST || '172.22.152.58', // replace with your LAN IP if needed
       protocol: 'ws',
       port: 5173
     }
